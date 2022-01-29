@@ -1650,10 +1650,10 @@ MonoBehaviour:
   iconCanvasGroup: {fileID: 2039340828}
   message: my parents, I remember that day, they bought me a beautiful beautiful
     toy car. who knows where it is now.
-  duration: 0.3
-  minTimeout: 1
-  perLetterTime: 0.05
-  fadeDuration: 1
+  duration: 0.2
+  minTimeout: 0
+  perLetterTime: 0.01
+  fadeDuration: 0.5
   objectsToActivate:
   - {fileID: 453886104}
   - {fileID: 1456687073}
@@ -7958,10 +7958,10 @@ MonoBehaviour:
   iconCanvasGroup: {fileID: 410826015}
   message: my parents, I remember that day, they bought me a beautiful beautiful
     toy car. who knows where it is now.
-  duration: 0.3
-  minTimeout: 1
-  perLetterTime: 0.05
-  fadeDuration: 1
+  duration: 0.2
+  minTimeout: 0
+  perLetterTime: 0.01
+  fadeDuration: 0.5
   objectsToActivate: []
   objectsToDeactivate: []
   showTextMultipleTimes: 1
@@ -9394,6 +9394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MacchininaVecchio
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607801105293616440, guid: cd3b7c1eb74f8f644b275c2be4d97371,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616442, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -12066,7 +12071,7 @@ PrefabInstance:
         type: 3}
       propertyPath: droppableObject
       value: 
-      objectReference: {fileID: 1664312991}
+      objectReference: {fileID: 1652060529}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42a5f30461524074bbd4628ce8e21095, type: 3}
 --- !u!1 &1054835963
@@ -12704,6 +12709,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
         type: 3}
+      propertyPath: duration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: minTimeout
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: fadeDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: perLetterTime
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
       propertyPath: objectsToActivate.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -12941,7 +12966,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172389486}
-  m_LocalRotation: {x: -0.6069911, y: -0.36271435, z: -0.6069913, w: 0.36271435}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 6.340907, y: 1.9947143, z: -0.21954513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12949,7 +12974,7 @@ Transform:
   - {fileID: 216293212}
   m_Father: {fileID: 0}
   m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: -118.278, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &1172389492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14368,10 +14393,10 @@ MonoBehaviour:
   iconCanvasGroup: {fileID: 1493623117}
   message: my parents, I remember that day, they bought me a beautiful beautiful
     toy car. who knows where it is now.
-  duration: 0.3
-  minTimeout: 1
-  perLetterTime: 0.05
-  fadeDuration: 1
+  duration: 0.2
+  minTimeout: 0
+  perLetterTime: 0.01
+  fadeDuration: 0.5
   objectsToActivate: []
   objectsToDeactivate: []
   showTextMultipleTimes: 0
@@ -16371,6 +16396,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1652060525}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1652060529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6607801105293616439, guid: cd3b7c1eb74f8f644b275c2be4d97371,
+    type: 3}
+  m_PrefabInstance: {fileID: 1652060525}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652060526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee01b7f40b4e5f24585398f9139aa0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659015262
 GameObject:
   m_ObjectHideFlags: 0
@@ -16474,18 +16511,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 666217146}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1664312991 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6607801105293616439, guid: cd3b7c1eb74f8f644b275c2be4d97371,
-    type: 3}
-  m_PrefabInstance: {fileID: 666217146}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664312989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee01b7f40b4e5f24585398f9139aa0be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1671055813
 GameObject:
   m_ObjectHideFlags: 0
@@ -17014,10 +17039,10 @@ MonoBehaviour:
   canvasText: {fileID: 1572466268}
   iconCanvasGroup: {fileID: 1436820921}
   message: Who are the people in this picture? I don't recognize them
-  duration: 0.3
-  minTimeout: 1
-  perLetterTime: 0.05
-  fadeDuration: 1
+  duration: 0.2
+  minTimeout: 0
+  perLetterTime: 0.01
+  fadeDuration: 0.5
   objectsToActivate: []
   objectsToDeactivate: []
   showTextMultipleTimes: 1
@@ -17290,7 +17315,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888367597}
-  m_LocalRotation: {x: -0.606991, y: 0.3627145, z: 0.60699123, w: 0.36271438}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: -0.7071068}
   m_LocalPosition: {x: -6.340907, y: 1.9947143, z: -0.21954513}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18129,7 +18154,7 @@ PrefabInstance:
         type: 3}
       propertyPath: droppableObject
       value: 
-      objectReference: {fileID: 1664312991}
+      objectReference: {fileID: 1652060529}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42a5f30461524074bbd4628ce8e21095, type: 3}
 --- !u!1 &2037795789
@@ -18331,7 +18356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2040308189
 Transform:
   m_ObjectHideFlags: 0
@@ -18381,9 +18406,9 @@ MonoBehaviour:
   message: "My marvelous car, I loved to travel on that wonder. But there was something
     I loved even more in this picture\u2026"
   duration: 0.2
-  minTimeout: 1
-  perLetterTime: 0.05
-  fadeDuration: 1
+  minTimeout: 0
+  perLetterTime: 0.01
+  fadeDuration: 0.5
   objectsToActivate: []
   objectsToDeactivate: []
   showTextMultipleTimes: 0
@@ -19121,9 +19146,9 @@ MonoBehaviour:
   iconCanvasGroup: {fileID: 7948099159973597389}
   message: Who are the people in this picture? I don't recognize them
   duration: 0.2
-  minTimeout: 1
-  perLetterTime: 0.05
-  fadeDuration: 1
+  minTimeout: 0
+  perLetterTime: 0.01
+  fadeDuration: 0.5
   objectsToActivate:
   - {fileID: 517461156}
   - {fileID: 1870513682}
