@@ -19,6 +19,7 @@ public class ShowTextOnInteract : Interactable {
 	public GameObject[] objectsToDeactivate;
 	private Coroutine iconCoroutine;
 	private Coroutine textCoroutine;
+	private bool skip;
 
 	public bool showTextMultipleTimes;
 	[ReadOnly] public bool storyAdvanced;
@@ -54,6 +55,10 @@ public class ShowTextOnInteract : Interactable {
 		}
 	}
 
+	public override void SecondaryInteract() {
+		skip = true;
+	}
+
 	public override void ShowInteractionAvailable() {
 		iconCanvasGroup.alpha = 1;
 		if (iconCoroutine != null) StopCoroutine(iconCoroutine);
@@ -74,7 +79,7 @@ public class ShowTextOnInteract : Interactable {
 	private IEnumerator FadeOutText() {
 		textCanvasGroup.alpha = 0;
 		float timer = fadeDuration / 2;
-		while (timer > 0) {
+		while (timer > 0 && !skip) {
 			float t = timer / fadeDuration;
 			textCanvasGroup.alpha = 1 - t;
 			timer -= Time.deltaTime;
@@ -82,21 +87,26 @@ public class ShowTextOnInteract : Interactable {
 		}
 		textCanvasGroup.alpha = 1;
 		float timeout = minTimeout - fadeDuration / 2f + textLength * perLetterTime;
-		yield return new WaitForSeconds(timeout);
+		timer = timeout;
+		while (timer > 0 && !skip) {
+			timer -= Time.deltaTime;
+			yield return null;
+		}
 		timer = fadeDuration;
-		while (timer > 0) {
+		while (timer > 0 && !skip) {
 			float t = timer / fadeDuration;
 			textCanvasGroup.alpha = t;
 			timer -= Time.deltaTime;
 			yield return null;
 		}
 		textCanvasGroup.alpha = 0;
+		skip = false;
 	}
 
 	private IEnumerator FadeOutTextOnce() {
 		textCanvasGroup.alpha = 0;
 		float timer = fadeDuration / 2;
-		while (timer > 0) {
+		while (timer > 0 && !skip) {
 			float t = timer / fadeDuration;
 			textCanvasGroup.alpha = 1 - t;
 			timer -= Time.deltaTime;
@@ -104,9 +114,13 @@ public class ShowTextOnInteract : Interactable {
 		}
 		textCanvasGroup.alpha = 1;
 		float timeout = minTimeout - fadeDuration / 2 + textLength * 0.1f;
-		yield return new WaitForSeconds(timeout);
+		timer = timeout;
+		while (timer > 0 && !skip) {
+			timer -= Time.deltaTime;
+			yield return null;
+		}
 		timer = fadeDuration;
-		while (timer > 0) {
+		while (timer > 0 && !skip) {
 			float t = timer / fadeDuration;
 			textCanvasGroup.alpha = t;
 			timer -= Time.deltaTime;
@@ -119,5 +133,6 @@ public class ShowTextOnInteract : Interactable {
 		foreach (GameObject o in objectsToDeactivate) {
 			o.SetActive(false);
 		}
+		skip = false;
 	}
 }
