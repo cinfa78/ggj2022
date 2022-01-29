@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GlobalSwitcher : MonoBehaviour {
+	public GameObject oldCharacter;
+	public GameObject youngCharacter;
 	public event Action Switch;
 
 	private void CallSwitch() {

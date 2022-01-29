@@ -9,6 +9,8 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 	[RequireComponent(typeof(CharacterController))]
 	[RequireComponent(typeof(AudioSource))]
 	public class FirstPersonController : MonoBehaviour {
+
+		public GameObject heldObjectPos;
 		public GameObject cameraGameObject;
 		[SerializeField] private bool m_IsWalking;
 		[SerializeField] private float m_WalkSpeed;

@@ -35,10 +35,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 1
-    - _Distortion_Amount: 0.06
+    - _Distortion_Amount: 0
+    - _Noise_Speed: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _scale_distortion: 39.65
+    - _scale_distortion: 500
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &4302167421718604790
