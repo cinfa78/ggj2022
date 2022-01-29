@@ -15,7 +15,7 @@ public class GameLoader : MonoBehaviour {
 	}
 
 	IEnumerator LoadYourAsyncScene() {
-		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Game");
+		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Principale");
 		while (!asyncLoad.isDone) {
 			canvasGroup.alpha += Time.deltaTime;
 			yield return null;
