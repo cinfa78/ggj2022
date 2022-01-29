@@ -25,7 +25,7 @@ public class SwitchInteraction : Interactable {
 			characterSwitcher.heldObject.GetComponent<MirrorTransform>().enabled = true;
 			mirroredObject.GetComponent<MirrorTransform>().enabled = false;
 			characterSwitcher.heldObject = mirroredObject;
-			characterSwitcher.heldObject.GameObject().transform.position = Vector3.zero;
+			characterSwitcher.heldObject.GameObject().transform.localPosition = Vector3.zero;
 		}
 	}
 
