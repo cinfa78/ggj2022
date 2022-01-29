@@ -49,6 +49,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else
             {
                 character.localRotation = m_CharacterTargetRot;
+                character.rotation = m_CharacterTargetRot;
                 camera.localRotation = m_CameraTargetRot;
             }
 
