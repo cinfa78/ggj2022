@@ -22,9 +22,10 @@ public class SwitchInteraction : Interactable {
 		else {
 			gameObjectSwitcher.CallSwitch();
 			var mirroredObject = characterSwitcher.heldObject.GameObject().GetComponent<MirrorTransform>().mirroredObject;
-			characterSwitcher.heldObject.GetComponent<MirrorTransform>().enabled = true;
 			mirroredObject.GetComponent<MirrorTransform>().enabled = false;
+			
 			characterSwitcher.heldObject = mirroredObject;
+			characterSwitcher.heldObject.GetComponent<MirrorTransform>().enabled = true;
 			characterSwitcher.heldObject.GameObject().transform.localPosition = Vector3.zero;
 		}
 	}
