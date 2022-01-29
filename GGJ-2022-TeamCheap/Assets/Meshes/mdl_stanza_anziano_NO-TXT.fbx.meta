@@ -3,7 +3,187 @@ guid: 24d9211a6e058ea4688dc8ed777321f6
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ANZIANO1
+    second: {fileID: 2100000, guid: c9742893c3fcf0a4d93db9bc520953f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CHIAVE_CORTA
+    second: {fileID: 2100000, guid: 756698ec24b69bf4cb185730ab4f2678, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CHIAVE_LUNGA
+    second: {fileID: 2100000, guid: 13c5ce75b3ef982498aef302e3c3e0c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CIABATTE1
+    second: {fileID: 2100000, guid: 5fff96ec212c6f0459f50f3e88f44280, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: COPERTA
+    second: {fileID: 2100000, guid: 4e2b8dddb8794534d8465322a4ab8709, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CORNICE_FOTO1
+    second: {fileID: 2100000, guid: fa7d53373162a7d4ab374599fe42c01d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FINESTRA1
+    second: {fileID: 2100000, guid: f89530708448858499f566f663de0678, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GIOVANE
+    second: {fileID: 2100000, guid: 72c6ea923822aa844bffc6c73357b03b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: INTERRUTTORE_LUCE1
+    second: {fileID: 2100000, guid: 0513c96a3cc34ad4fb8fe9c8356346a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LAMPADA1
+    second: {fileID: 2100000, guid: 633666c6ce08bd441bf66d71bf43f664, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LAMPADARIO1
+    second: {fileID: 2100000, guid: 3393bf0dc1aa92b49932dd1115ee5d47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LEGNO_LIBRERIA_MEDIA
+    second: {fileID: 2100000, guid: c96eaeddd539fce478088f3a172f170f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LIBRI_LIBRERIA
+    second: {fileID: 2100000, guid: 59dcc49e5253a7b4bbc1f15a1abed95f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LIBRO
+    second: {fileID: 2100000, guid: 0fa473d8aa3c7a64cb68f6bab5975b6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MACCHINA_GIOCATTOLO1
+    second: {fileID: 2100000, guid: c4e9c3c860448c34497f5b4e13abc820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MACCHINA_VECCHIA
+    second: {fileID: 2100000, guid: a10168fb31c025b4e8a1a3172c4c6844, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MATERASSO_E_CUSCINI
+    second: {fileID: 2100000, guid: 2192ca81ed5a80943981d3596be8dd84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOBILETTO1
+    second: {fileID: 2100000, guid: b1b573e08c7e4d3448f397beca675a43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOBILE_GRANDE3
+    second: {fileID: 2100000, guid: 25b6701c4fdf7fd4c9b9d685cddc7610, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PARETE_ARMADIO
+    second: {fileID: 2100000, guid: 88f178190f8ac0141800bb2ae5cbf917, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PARETE_ARMADIO1
+    second: {fileID: 2100000, guid: e06178422dfa7054993a9aa8914e46a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: POGGIAPIEDI
+    second: {fileID: 2100000, guid: a91725c59491e344fa98bd5be68c0df6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: POLTRONCINA
+    second: {fileID: 2100000, guid: 53d97f04ff6136a408f40ecd332a5767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PORTA3
+    second: {fileID: 2100000, guid: 196a4047958721844b3257713911559c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QUADRO4
+    second: {fileID: 2100000, guid: 3fe8519beb72ab74ebb517c35ba1caf2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QUADRO5
+    second: {fileID: 2100000, guid: 5cbf003c2b62aae41b12d5908ff764bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QUADRO6
+    second: {fileID: 2100000, guid: 51af68377c55b6947907cdab1580f9d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QUADRO8
+    second: {fileID: 2100000, guid: 6c0b2ae5743fabf459e92dc352e148fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCRIGNO1
+    second: {fileID: 2100000, guid: ec596984d9b6ae34486f62295f088236, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SOFFITTO1
+    second: {fileID: 2100000, guid: c2db75b43f1546f4db640b91168440ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SPECCHIO
+    second: {fileID: 2100000, guid: 5918b214931f1b74f8cef3a7609fc355, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SPECCHIO_LATERALE
+    second: {fileID: 2100000, guid: 93b3a1da67d6f414398c52b6843f53c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: STRUTTURA_LETTO
+    second: {fileID: 2100000, guid: 6bd94a408001c794882c944927261804, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: STRUTTURA_STANZA
+    second: {fileID: 2100000, guid: 13c79d7dc323bc04ab4d74916dadb7ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TAPPETINO1
+    second: {fileID: 2100000, guid: aba2b67719e0e5547bf4dba442e9f6a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: e62fe9654c3383744ac129d538f5d2e2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
