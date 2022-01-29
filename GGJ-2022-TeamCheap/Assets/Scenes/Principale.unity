@@ -8757,6 +8757,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_RunSpeed
       value: 4
@@ -8785,6 +8789,14 @@ PrefabInstance:
       propertyPath: heldObjectPos
       value: 
       objectReference: {fileID: 460017744}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_FootstepSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e593f471154fe4f4d8ad4956ddccd3a4, type: 3}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_FootstepSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 440845fe397080b469c4d2f9b4b5572d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!1 &639670037
@@ -10046,7 +10058,7 @@ MonoBehaviour:
   m_text: my parents, I remember that day, they bought me a beautiful beautiful toy
     car. who knows where it is now.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dfbec9fa0b8258d4c972ade94859a275, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0dbf72b0dd8365641a1702a5242bb35f, type: 2}
   m_sharedMaterial: {fileID: 4382193893217913926, guid: dfbec9fa0b8258d4c972ade94859a275,
     type: 2}
   m_fontSharedMaterials: []
@@ -10072,8 +10084,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.15
-  m_fontSizeBase: 0.15
+  m_fontSize: 0.12
+  m_fontSizeBase: 0.12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0.2
@@ -10111,7 +10123,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &793928285
@@ -13256,6 +13268,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.422
       objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -13265,8 +13281,16 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_JumpSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_JumpSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_LandSound
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_WalkSpeed
@@ -13284,6 +13308,14 @@ PrefabInstance:
       propertyPath: m_StepInterval
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_FootstepSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e593f471154fe4f4d8ad4956ddccd3a4, type: 3}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_FootstepSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 440845fe397080b469c4d2f9b4b5572d, type: 3}
     - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Radius
       value: 0.35
@@ -14093,7 +14125,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Who are the people in this picture? I don't recognize them
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dfbec9fa0b8258d4c972ade94859a275, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0dbf72b0dd8365641a1702a5242bb35f, type: 2}
   m_sharedMaterial: {fileID: 4382193893217913926, guid: dfbec9fa0b8258d4c972ade94859a275,
     type: 2}
   m_fontSharedMaterials: []
@@ -14119,10 +14151,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 36
+  m_fontSize: 0.12
+  m_fontSizeBase: 0.12
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 0.2
   m_fontSizeMax: 2
   m_fontStyle: 0
@@ -14158,7 +14190,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1551232683
@@ -14642,7 +14674,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.775
+      value: -2.9370003
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -14657,7 +14689,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.50692093
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -14667,7 +14699,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.86199254
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15331,7 +15363,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.785
+      value: 0.947
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15346,7 +15378,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.506921
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15356,7 +15388,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.8619925
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15371,7 +15403,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -119.082
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
