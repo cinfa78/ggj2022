@@ -1515,12 +1515,12 @@ MonoBehaviour:
     toy car. who knows where it is now.
   duration: 0.3
   minTimeout: 1
+  perLetterTime: 0.05
   fadeDuration: 1
   objectsToActivate:
   - {fileID: 453886104}
   - {fileID: 1456687073}
-  - {fileID: 1589307324}
-  - {fileID: 1652060526}
+  - {fileID: 552267975}
   objectsToDeactivate:
   - {fileID: 1870513682}
   - {fileID: 237242342}
@@ -7652,6 +7652,7 @@ MonoBehaviour:
     toy car. who knows where it is now.
   duration: 0.3
   minTimeout: 1
+  perLetterTime: 0.05
   fadeDuration: 1
   objectsToActivate: []
   objectsToDeactivate: []
@@ -8106,6 +8107,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2053380814409787720, guid: be9f93828948f924a93d6caa1f54a1c8,
     type: 3}
   m_PrefabInstance: {fileID: 603832439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &552267975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7948099160016201232, guid: d16a09f0c93dec44ca4a2c599266b237,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141059996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &552267976 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141059996}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &554881446
 GameObject:
@@ -11271,7 +11284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016910241}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.358, y: 0, z: 0}
+  m_LocalPosition: {x: 1.368, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12019,6 +12032,264 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140547068}
   m_Mesh: {fileID: 1184487379074732813, guid: 24d9211a6e058ea4688dc8ed777321f6, type: 3}
+--- !u!1001 &1141059996
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1575744074}
+    m_Modifications:
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.5055
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.536
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.17253251
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.019654257
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9784794
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.11146453
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.657
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 12.998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099159704045807, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201232, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_Name
+      value: MacchininaLeggibile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201232, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.915
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.918
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.95671916
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.29101282
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 326.163
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: message
+      value: I used to play with this toycar a lot! It was my favorite. I remember
+        my father kept it in the desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: objectsToActivate.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: objectsToDeactivate.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: objectsToActivate.Array.data[0]
+      value: 
+      objectReference: {fileID: 1589307324}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: objectsToActivate.Array.data[1]
+      value: 
+      objectReference: {fileID: 1652060526}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: objectsToDeactivate.Array.data[0]
+      value: 
+      objectReference: {fileID: 552267975}
+    - target: {fileID: 7948099160124112612, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_text
+      value: I used to play with this toycar a lot! It was my favorite. I remember
+        my father kept it in the desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160124112612, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160124112612, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3,
+        type: 2}
+    - target: {fileID: 7948099160124112612, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160124112612, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
+        type: 2}
+    - target: {fileID: 7948099160124112612, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160124112613, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.124
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160124112613, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160124112613, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.335
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9189878
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39428592
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000059604638
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -46.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160393893916, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219911419275071015, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4e9c3c860448c34497f5b4e13abc820, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d16a09f0c93dec44ca4a2c599266b237, type: 3}
 --- !u!1 &1172389486
 GameObject:
   m_ObjectHideFlags: 0
@@ -12978,6 +13249,7 @@ MonoBehaviour:
   message: Testo da visualizzare
   duration: 0.3
   minTimeout: 1
+  perLetterTime: 0.05
   fadeDuration: 1
   objectsToActivate: []
   objectsToDeactivate: []
@@ -13473,6 +13745,7 @@ MonoBehaviour:
     toy car. who knows where it is now.
   duration: 0.3
   minTimeout: 1
+  perLetterTime: 0.05
   fadeDuration: 1
   objectsToActivate: []
   objectsToDeactivate: []
@@ -14597,6 +14870,7 @@ Transform:
   m_Children:
   - {fileID: 237242346}
   - {fileID: 1456687074}
+  - {fileID: 552267976}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14675,8 +14949,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9370003
+      value: -3.915
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -14686,12 +14965,12 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.655
+      value: -2.918
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.50692093
+      value: -0.9567196
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -14701,7 +14980,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.86199254
+      value: -0.2910115
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -14716,7 +14995,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 326.163
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -14738,6 +15017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MacchininaNuova1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607801105293616440, guid: cd3b7c1eb74f8f644b275c2be4d97371,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616442, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15360,8 +15644,13 @@ PrefabInstance:
     - target: {fileID: 6607801105293616433, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6607801105293616433, guid: cd3b7c1eb74f8f644b275c2be4d97371,
+        type: 3}
+      propertyPath: mirroredObject
+      value: 
+      objectReference: {fileID: 1589307324}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_RootOrder
@@ -15370,7 +15659,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.947
+      value: 3.915
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15380,22 +15669,22 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.655
+      value: -2.918
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.506921
+      value: -0.9567196
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8619925
+      value: 0.2910114
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15410,7 +15699,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -119.082
+      value: 326.163
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15432,6 +15721,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MacchininaVecchia1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607801105293616440, guid: cd3b7c1eb74f8f644b275c2be4d97371,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616442, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -16097,6 +16391,7 @@ MonoBehaviour:
   message: Who are the people in this picture? I don't recognize them
   duration: 0.3
   minTimeout: 1
+  perLetterTime: 0.05
   fadeDuration: 1
   objectsToActivate: []
   objectsToDeactivate: []
@@ -16294,7 +16589,7 @@ BoxCollider:
   m_GameObject: {fileID: 1888367597}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.7369317, y: 0.67590034, z: 0.349004}
   m_Center: {x: -0.00000005960466, y: -0.33794624, z: 0.11055862}
@@ -18114,6 +18409,7 @@ MonoBehaviour:
   message: Who are the people in this picture? I don't recognize them
   duration: 0.2
   minTimeout: 1
+  perLetterTime: 0.05
   fadeDuration: 1
   objectsToActivate:
   - {fileID: 517461156}
