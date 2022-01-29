@@ -7065,6 +7065,7 @@ MonoBehaviour:
   iconCanvasGroup: {fileID: 1311315540}
   duration: 0.3
   storyAdvanced: 0
+  audioClip: {fileID: 0}
   objectsToActivate: []
   objectsToDeactivate: []
 --- !u!4 &633922052
@@ -7808,7 +7809,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778485399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9086,6 +9087,7 @@ MonoBehaviour:
   duration: 0.2
   canvasGroup: {fileID: 1873611693}
   canvasOrienter: {fileID: 1951479893}
+  audioClip: {fileID: 0}
 --- !u!65 &990868934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9788,6 +9790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconCanvasGroup: {fileID: 216293213}
   duration: 0.3
+  audioClip: {fileID: 0}
 --- !u!23 &1172389489
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12337,6 +12340,7 @@ MonoBehaviour:
   iconCanvasGroup: {fileID: 1389247834}
   duration: 0.3
   storyAdvanced: 0
+  audioClip: {fileID: 0}
   objectsToActivate: []
   objectsToDeactivate: []
 --- !u!4 &1819040455

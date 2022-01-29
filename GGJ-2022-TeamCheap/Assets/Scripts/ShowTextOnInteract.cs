@@ -12,6 +12,7 @@ public class ShowTextOnInteract : Interactable {
 	private int textLength;
 	public float duration = 0.3f;
 	public float minTimeout;
+	public float perLetterTime = 0.05f;
 	public float fadeDuration;
 	private Collider collider;
 	public GameObject[] objectsToActivate;
@@ -80,7 +81,7 @@ public class ShowTextOnInteract : Interactable {
 			yield return null;
 		}
 		textCanvasGroup.alpha = 1;
-		float timeout = minTimeout - fadeDuration / 2 + textLength * 0.1f;
+		float timeout = minTimeout - fadeDuration / 2f + textLength * perLetterTime;
 		yield return new WaitForSeconds(timeout);
 		timer = fadeDuration;
 		while (timer > 0) {
