@@ -15,17 +15,14 @@ public class SwitchInteraction : Interactable {
 	}
 
 	public override void Interact() {
-		if (!characterSwitcher.IsHoldingObject) 
-		{
-			gameObjectSwitcher.CallSwitch();
-		}
-		else {
-			gameObjectSwitcher.CallSwitch();
+		gameObjectSwitcher.CallSwitch();
+		if (characterSwitcher.IsHoldingObject) {
 			var mirroredObject = characterSwitcher.heldObject.GameObject().GetComponent<MirrorTransform>().mirroredObject;
 			mirroredObject.GetComponent<MirrorTransform>().enabled = false;
 			
 			characterSwitcher.heldObject = mirroredObject;
-			characterSwitcher.heldObject.GetComponent<MirrorTransform>().enabled = true;
+			characterSwitcher.heldObject.GetComponent<MirrorTransform>().enabled = false;
+			characterSwitcher.heldObject.GameObject().GetComponent<MirrorTransform>().mirroredObject.GetComponent<MirrorTransform>().enabled = true;
 			characterSwitcher.heldObject.GameObject().transform.localPosition = Vector3.zero;
 		}
 	}
