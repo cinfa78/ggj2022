@@ -1369,6 +1369,7 @@ MonoBehaviour:
   duration: 0.2
   canvasGroup: {fileID: 554881451}
   canvasOrienter: {fileID: 1317318788}
+  audioClip: {fileID: 0}
 --- !u!65 &225210344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1519,6 +1520,7 @@ MonoBehaviour:
   - {fileID: 453886104}
   - {fileID: 1456687073}
   - {fileID: 1589307324}
+  - {fileID: 1652060526}
   objectsToDeactivate:
   - {fileID: 1870513682}
   - {fileID: 237242342}
@@ -12073,6 +12075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconCanvasGroup: {fileID: 216293213}
   duration: 0.3
+  audioClip: {fileID: 0}
 --- !u!23 &1172389489
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13428,7 +13431,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456687073}
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.00005968967, y: -0.0002790519, z: 0.00093390135, w: 0.9999995}
   m_LocalPosition: {x: 1.937, y: 0.848, z: 4.055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13438,7 +13441,7 @@ Transform:
   - {fileID: 1493623116}
   m_Father: {fileID: 1575744074}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.007, y: -0.032, z: 0.107}
 --- !u!114 &1456687075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13472,8 +13475,7 @@ MonoBehaviour:
   minTimeout: 1
   fadeDuration: 1
   objectsToActivate: []
-  objectsToDeactivate:
-  - {fileID: 1870513682}
+  objectsToDeactivate: []
   showTextMultipleTimes: 0
   storyAdvanced: 0
 --- !u!65 &1456687077
@@ -14679,7 +14681,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15355,6 +15357,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1016910242}
     m_Modifications:
+    - target: {fileID: 6607801105293616433, guid: cd3b7c1eb74f8f644b275c2be4d97371,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_RootOrder
@@ -15368,7 +15375,7 @@ PrefabInstance:
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: 6607801105293616436, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15414,7 +15421,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -6544992745051315742, guid: 24d9211a6e058ea4688dc8ed777321f6,
+      objectReference: {fileID: -4164889188177245357, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
     - target: {fileID: 6607801105293616439, guid: cd3b7c1eb74f8f644b275c2be4d97371,
         type: 3}
@@ -15430,7 +15437,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c4e9c3c860448c34497f5b4e13abc820, type: 2}
+      objectReference: {fileID: 2100000, guid: a10168fb31c025b4e8a1a3172c4c6844, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd3b7c1eb74f8f644b275c2be4d97371, type: 3}
 --- !u!1 &1652060526 stripped
@@ -16305,6 +16312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconCanvasGroup: {fileID: 846555981}
   duration: 0.3
+  audioClip: {fileID: 0}
 --- !u!23 &1888367602
 MeshRenderer:
   m_ObjectHideFlags: 0
