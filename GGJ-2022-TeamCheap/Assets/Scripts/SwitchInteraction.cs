@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SwitchInteraction : Interactable {
@@ -14,9 +15,17 @@ public class SwitchInteraction : Interactable {
 	}
 
 	public override void Interact() {
-		//if (!characterSwitcher.IsHoldingObject) 
+		if (!characterSwitcher.IsHoldingObject) 
 		{
 			gameObjectSwitcher.CallSwitch();
+		}
+		else {
+			gameObjectSwitcher.CallSwitch();
+			var mirroredObject = characterSwitcher.heldObject.GameObject().GetComponent<MirrorTransform>().mirroredObject;
+			characterSwitcher.heldObject.GetComponent<MirrorTransform>().enabled = true;
+			mirroredObject.GetComponent<MirrorTransform>().enabled = false;
+			characterSwitcher.heldObject = mirroredObject;
+			characterSwitcher.heldObject.GameObject().transform.position = Vector3.zero;
 		}
 	}
 
