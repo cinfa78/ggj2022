@@ -14,13 +14,15 @@ public class SwitchInteraction : Interactable {
 	}
 
 	public override void Interact() {
-		if (!characterSwitcher.IsHoldingObject) {
+		//if (!characterSwitcher.IsHoldingObject) 
+		{
 			gameObjectSwitcher.CallSwitch();
 		}
 	}
 
 	public override void ShowInteractionAvailable() {
-		if (!characterSwitcher.IsHoldingObject) {
+		//if (!characterSwitcher.IsHoldingObject) 
+		{
 			iconCanvasGroup.alpha = 1;
 			if (iconCoroutine != null) StopCoroutine(iconCoroutine);
 			iconCoroutine = StartCoroutine(FadeOutIcon());
