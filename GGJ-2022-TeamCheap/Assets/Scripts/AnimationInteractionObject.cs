@@ -8,7 +8,7 @@ public class AnimationInteractionObject : Interactable {
 
 	[ShowInInspector] private float duration = 0.3f;
 	public CanvasGroup iconCanvasGroup;
-
+	public AudioClip audioClip;
 	public GameObject[] objectsToActivate;
 	public GameObject[] objectsToDeactivate;
 
@@ -47,6 +47,9 @@ public class AnimationInteractionObject : Interactable {
 			}
 			else {
 				Debug.Log($"No animator in {name}");
+			}
+			if (audioClip != null) {
+				AudioSource.PlayClipAtPoint(audioClip,transform.position);
 			}
 			foreach (GameObject o in objectsToActivate) {
 				o.SetActive(true);

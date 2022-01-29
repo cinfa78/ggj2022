@@ -12,6 +12,7 @@ public class Pickable : Interactable {
 	private GameObject activePlayer;
 	private CharacterSwitcher characterSwitcher;
 	public GameObject canvasOrienter;
+	public AudioClip audioClip;
 	private Collider collider;
 
 	private void Awake() {
@@ -28,6 +29,9 @@ public class Pickable : Interactable {
 
 	public override void Interact() {
 		if (characterSwitcher.IsHoldingObject == false) {
+			if (audioClip != null) {
+				AudioSource.PlayClipAtPoint(audioClip,transform.position);
+			}
 			mirrorTransform.enabled = false;
 			rigidbody.isKinematic = true;
 			canvasGroup.GetComponent<Canvas>().enabled = false;

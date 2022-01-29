@@ -9,6 +9,7 @@ public class AnimationInteraction : Interactable {
 	private Animator animator;
 	private Coroutine iconCoroutine;
 	private bool animationOver;
+	public AudioClip audioClip;
 
 	private void Awake() {
 		animator = GetComponent<Animator>();
@@ -19,6 +20,9 @@ public class AnimationInteraction : Interactable {
 		if (!animationOver) {
 			animator.SetTrigger("start");
 			animationOver = true;
+			if (audioClip != null) {
+				AudioSource.PlayClipAtPoint(audioClip, transform.position);
+			}
 		}
 	}
 
