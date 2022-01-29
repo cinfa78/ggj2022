@@ -48,7 +48,7 @@ public class InteractionController : MonoBehaviour {
 		}
 		if (Input.GetButtonDown("Fire2")) {
 			if (Physics.Raycast(ray, out hit, maxDistanceInteract, layerMask)) {
-				Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.yellow, 1);
+				Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red, 1);
 				Interactable ic = hit.collider.GetComponent<Interactable>();
 				if (ic != null) {
 					ic.SecondaryInteract();

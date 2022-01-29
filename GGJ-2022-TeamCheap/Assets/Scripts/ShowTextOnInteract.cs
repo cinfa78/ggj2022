@@ -50,7 +50,6 @@ public class ShowTextOnInteract : Interactable {
 				if (textCoroutine != null) StopCoroutine(textCoroutine);
 				textCoroutine = StartCoroutine(FadeOutTextOnce());
 				storyAdvanced = true;
-				Destroy(collider);
 			}
 		}
 	}
@@ -134,5 +133,6 @@ public class ShowTextOnInteract : Interactable {
 			o.SetActive(false);
 		}
 		skip = false;
+		Destroy(collider);
 	}
 }

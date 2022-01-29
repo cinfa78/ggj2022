@@ -68,6 +68,7 @@ public class CharacterSwitcher : MonoBehaviour {
 			heldObject.GetComponent<MirrorTransform>().enabled = true;
 			mirroredObject.GetComponent<MirrorTransform>().enabled = false;
 			heldObject = mirroredObject;
+			heldObject.GameObject().transform.localPosition = Vector3.zero;
 		}
 	}
 }

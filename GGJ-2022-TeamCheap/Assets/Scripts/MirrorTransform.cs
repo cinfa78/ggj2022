@@ -7,9 +7,12 @@ public class MirrorTransform : MonoBehaviour {
 	[FormerlySerializedAs("reference")] [FormerlySerializedAs("referenceTransform")]
 	public GameObject mirroredObject;
 
-	private void FixedUpdate() {
-		transform.rotation = Quaternion.Euler(new Vector3(mirroredObject.transform.rotation.eulerAngles.x * 1, mirroredObject.transform.rotation.eulerAngles.y * -1, mirroredObject.transform.rotation.eulerAngles.z * -1));
-		transform.position = new Vector3(mirroredObject.transform.position.x * -1, mirroredObject.transform.position.y, mirroredObject.transform.position.z);
+	private void Update() {
+		if (mirroredObject != null) {
+			transform.rotation = Quaternion.Euler(new Vector3(mirroredObject.transform.rotation.eulerAngles.x * 1, mirroredObject.transform.rotation.eulerAngles.y * -1,
+				mirroredObject.transform.rotation.eulerAngles.z * -1));
+			transform.position = new Vector3(mirroredObject.transform.position.x * -1, mirroredObject.transform.position.y, mirroredObject.transform.position.z);
+		}
 	}
 
 	private void OnDrawGizmos() {
