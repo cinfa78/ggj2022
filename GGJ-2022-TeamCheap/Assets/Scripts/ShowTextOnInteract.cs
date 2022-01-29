@@ -1,16 +1,17 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ShowTextOnInteract : Interactable {
 	public Canvas canvasText;
 	public CanvasGroup iconCanvasGroup;
+	[TextArea]public string message;
 	private CanvasGroup textCanvasGroup;
 	private TMP_Text label;
 	private int textLength;
 	public float duration = 0.3f;
-	 public float minTimeout;
+	public float minTimeout;
 	public float fadeDuration;
 	private Coroutine iconCoroutine;
 	private Coroutine textCoroutine;
@@ -21,6 +22,10 @@ public class ShowTextOnInteract : Interactable {
 		label = canvasText.GetComponentInChildren<TMP_Text>();
 		textLength = label.text.Length;
 		iconCanvasGroup.alpha = 0;
+	}
+
+	private void Start() {
+		label.text = message;
 	}
 
 	public override void Interact() {

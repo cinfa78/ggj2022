@@ -17,9 +17,6 @@ public class InteractionController : MonoBehaviour {
 		layerMask = 1 << layerMask;
 	}
 
-	//public event Action InteractionAvailable;
-
-	// Update is called once per frame
 	private void Update() {
 		var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 		if (Physics.Raycast(ray, out hit, maxDistanceInteract, layerMask)) {
@@ -32,6 +29,7 @@ public class InteractionController : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown("Fire1")) {
+			Debug.Log($"Button down!");
 			// This would cast rays only against colliders in layer 3.
 
 			// Does the ray intersect any objects excluding the player layer

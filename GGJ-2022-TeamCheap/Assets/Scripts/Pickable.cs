@@ -28,6 +28,7 @@ public class Pickable : Interactable {
 
 	public override void Interact() {
 		if (characterSwitcher.IsHoldingObject == false) {
+			mirrorTransform.enabled = false;
 			rigidbody.isKinematic = true;
 			canvasGroup.GetComponent<Canvas>().enabled = false;
 			if (characterSwitcher.oldActive) {
@@ -55,12 +56,16 @@ public class Pickable : Interactable {
 	public void PutDown() {
 		transform.parent = null;
 		rigidbody.isKinematic = true;
-		mirrorTransform.enabled = false;
+		//mirrorTransform.enabled = false;
 		collider.enabled = true;
 		canvasGroup.GetComponent<Canvas>().enabled = true;
 	}
 
 	public override void ShowInteractionAvailable() {
+		if (mirrorTransform.enabled) {
+			mirrorTransform.enabled = false;
+			mirroredObject.GetComponent<MirrorTransform>().enabled = true;
+		}
 		if (characterSwitcher.IsHoldingObject == false) {
 			canvasOrienter.transform.LookAt(Camera.main.transform);
 			canvasGroup.alpha = 1;

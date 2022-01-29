@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,6 +11,9 @@ public class DropPositionMarker : Interactable {
 	private Coroutine iconCoroutine;
 	public float duration = 0.3f;
 	private CharacterSwitcher characterSwitcher;
+	public bool storyAdvanced;
+	public GameObject[] objectsToActivate;
+	public GameObject[] objectsToDeactivate;
 
 	private void Awake() {
 		characterSwitcher = FindObjectOfType<CharacterSwitcher>();
@@ -22,22 +24,18 @@ public class DropPositionMarker : Interactable {
 		iconCanvasGroup.alpha = 0;
 	}
 
+	private void Start() {
+		foreach (var o in objectsToActivate) {
+			o.SetActive(false);
+		}
+	}
+
 	public override void ShowInteractionAvailable() {
 		Debug.Log($"{characterSwitcher.IsHoldingObject} {characterSwitcher.heldObject} {droppableObject}");
 		if (characterSwitcher.IsHoldingObject && characterSwitcher.heldObject.name == droppableObject.name) {
 			iconCanvasGroup.alpha = 1;
 			if (iconCoroutine != null) StopCoroutine(iconCoroutine);
 			iconCoroutine = StartCoroutine(FadeOutIcon());
-		}
-	}
-
-	public override void Interact() {
-		if (characterSwitcher.IsHoldingObject && characterSwitcher.heldObject.name == droppableObject.name) {
-			droppableObject.transform.parent = null;
-			droppableObject.transform.position = transform.position;
-			droppableObject.transform.rotation = transform.rotation;
-			characterSwitcher.heldObject = null;
-			droppableObject.GetComponent<Pickable>().PutDown();
 		}
 	}
 
@@ -50,6 +48,28 @@ public class DropPositionMarker : Interactable {
 			yield return null;
 		}
 		iconCanvasGroup.alpha = 0;
+	}
+
+	public override void Interact() {
+		if (characterSwitcher.IsHoldingObject && characterSwitcher.heldObject.name == droppableObject.name) {
+			droppableObject.transform.parent = null;
+			droppableObject.transform.position = transform.position;
+			droppableObject.transform.rotation = transform.rotation;
+			characterSwitcher.heldObject = null;
+			droppableObject.GetComponent<MirrorTransform>().enabled = true;
+			droppableObject.GetComponent<MirrorTransform>().mirroredObject.GetComponent<MirrorTransform>().enabled = true;
+			droppableObject.GetComponent<Pickable>().PutDown();
+			droppableObject.mirroredObject.GetComponent<Pickable>().PutDown();
+			if (!storyAdvanced) {
+				storyAdvanced = true;
+				foreach (var o in objectsToActivate) {
+					o.SetActive(true);
+				}
+				foreach (var o in objectsToDeactivate) {
+					o.SetActive(false);
+				}
+			}
+		}
 	}
 
 	private void OnDrawGizmos() {

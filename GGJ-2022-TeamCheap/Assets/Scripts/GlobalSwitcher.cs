@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class GlobalSwitcher : MonoBehaviour {
@@ -8,7 +9,8 @@ public class GlobalSwitcher : MonoBehaviour {
 	public GameObject youngCharacter;
 	public event Action Switch;
 
-	private void CallSwitch() {
+	[Button("Switch")]
+	public void CallSwitch() {
 		Switch?.Invoke();
 	}
 
