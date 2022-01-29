@@ -11,6 +11,7 @@ public class DropPositionMarker : Interactable {
 	public float duration = 0.3f;
 	private CharacterSwitcher characterSwitcher;
 	public bool storyAdvanced;
+	public AudioClip audioClip;
 	public GameObject[] objectsToActivate;
 	public GameObject[] objectsToDeactivate;
 
@@ -59,6 +60,9 @@ public class DropPositionMarker : Interactable {
 			droppableObject.GetComponent<MirrorTransform>().mirroredObject.GetComponent<MirrorTransform>().enabled = true;
 			droppableObject.GetComponent<Pickable>().PutDown();
 			droppableObject.mirroredObject.GetComponent<Pickable>().PutDown();
+			if (audioClip != null) {
+				AudioSource.PlayClipAtPoint(audioClip,transform.position);
+			}
 			if (!storyAdvanced) {
 				storyAdvanced = true;
 				foreach (var o in objectsToActivate) {
