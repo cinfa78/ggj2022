@@ -1,11 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameLoader : MonoBehaviour {
 	private bool isLoading = false;
 	public CanvasGroup canvasGroup;
+
+	private void Awake() {
+		
+		DontDestroyOnLoad(this);
+	}
 
 	public void LoadGameScene() {
 		if (!isLoading) {
@@ -14,7 +18,7 @@ public class GameLoader : MonoBehaviour {
 		}
 	}
 
-	IEnumerator LoadYourAsyncScene() {
+	private IEnumerator LoadYourAsyncScene() {
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Principale");
 		while (!asyncLoad.isDone) {
 			canvasGroup.alpha += Time.deltaTime;
