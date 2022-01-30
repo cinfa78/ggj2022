@@ -10591,6 +10591,7 @@ MonoBehaviour:
   message: Testo da visualizzare
   duration: 0.3
   minTimeout: 1
+  perLetterTime: 0.05
   fadeDuration: 1
   objectsToActivate: []
   objectsToDeactivate: []
@@ -12645,7 +12646,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -28150103733202367, guid: 24d9211a6e058ea4688dc8ed777321f6, type: 3}
+  - {fileID: 2100000, guid: 72c6ea923822aa844bffc6c73357b03b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

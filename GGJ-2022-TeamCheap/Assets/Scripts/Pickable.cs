@@ -5,10 +5,11 @@ using UnityEngine;
 public class Pickable : Interactable {
 	public string objectName;
 	[ReadOnly] public GameObject mirroredObject;
-	public float duration = 1;
+	public CanvasIconManager canvasIconManager;
+	//public float duration = 1;
 	private MirrorTransform mirrorTransform;
 	private Rigidbody rigidbody;
-	public CanvasGroup canvasGroup;
+	//public CanvasGroup canvasGroup;
 	private GameObject activePlayer;
 	private CharacterSwitcher characterSwitcher;
 	public GameObject canvasOrienter;
@@ -19,7 +20,6 @@ public class Pickable : Interactable {
 		characterSwitcher = FindObjectOfType<CharacterSwitcher>();
 		mirrorTransform = GetComponent<MirrorTransform>();
 		rigidbody = GetComponent<Rigidbody>();
-		canvasGroup.alpha = 0;
 		collider = GetComponent<Collider>();
 	}
 
@@ -34,7 +34,8 @@ public class Pickable : Interactable {
 			}
 			mirrorTransform.enabled = false;
 			rigidbody.isKinematic = true;
-			canvasGroup.GetComponent<Canvas>().enabled = false;
+			//canvasGroup.GetComponent<Canvas>().enabled = false;
+			canvasIconManager.Hide();
 			if (characterSwitcher.oldActive) {
 				transform.parent = characterSwitcher.oldFPC.heldObjectPos.transform;
 				mirroredObject.transform.parent = characterSwitcher.youngFPC.heldObjectPos.transform;
@@ -62,7 +63,7 @@ public class Pickable : Interactable {
 		rigidbody.isKinematic = true;
 		//mirrorTransform.enabled = false;
 		collider.enabled = true;
-		canvasGroup.GetComponent<Canvas>().enabled = true;
+		//canvasGroup.GetComponent<Canvas>().enabled = true;
 	}
 
 	public override void ShowInteractionAvailable() {
@@ -75,20 +76,7 @@ public class Pickable : Interactable {
 		}
 		if (characterSwitcher.IsHoldingObject == false) {
 			canvasOrienter.transform.LookAt(Camera.main.transform);
-			canvasGroup.alpha = 1;
-			StopAllCoroutines();
-			StartCoroutine(FadeOut());
+			canvasIconManager.Show();
 		}
-	}
-
-	private IEnumerator FadeOut() {
-		float timer = duration;
-		while (timer > 0) {
-			float t = timer / duration;
-			canvasGroup.alpha = t;
-			timer -= Time.deltaTime;
-			yield return null;
-		}
-		canvasGroup.alpha = 0;
 	}
 }

@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 5895633}
+  loadAudioClip: {fileID: 8300000, guid: 80bec3c4fb7a6fa4599f27884a46848a, type: 3}
 --- !u!4 &457190212
 Transform:
   m_ObjectHideFlags: 0
@@ -335,7 +336,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5fb13cbe81c0b9e4683ac9cfd24efa43, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 72beab40a0e4fad4384e17f61cffc37c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -479,7 +480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The day i lost you
+  m_text: The day I lost you
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfbec9fa0b8258d4c972ade94859a275, type: 2}
   m_sharedMaterial: {fileID: 4382193893217913926, guid: dfbec9fa0b8258d4c972ade94859a275,

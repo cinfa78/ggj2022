@@ -1,16 +1,15 @@
 using System.Collections;
-using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class AnimationInteractionObject : Interactable {
 	public Pickable objectNeeded;
 
-	[ShowInInspector] private float duration = 0.3f;
-	public CanvasGroup iconCanvasGroup;
+	public CanvasIconManager canvasIconManager;
 	public AudioClip audioClip;
 	public GameObject[] objectsToActivate;
 	public GameObject[] objectsToDeactivate;
+	public float activationDelay = 0f;
 
 	private Animator animator;
 	private Collider collider;
@@ -24,13 +23,18 @@ public class AnimationInteractionObject : Interactable {
 		foreach (GameObject o in objectsToActivate) {
 			o.SetActive(false);
 		}
-		iconCanvasGroup.alpha = 0;
 	}
 
 	private void OnDrawGizmos() {
 		if (objectNeeded != null) {
 			Gizmos.color = Color.white;
 			Gizmos.DrawLine(transform.position, objectNeeded.transform.position);
+		}
+	}
+
+	public override void ShowInteractionAvailable() {
+		if (characterSwitcher.IsHoldingObject && objectNeeded.name == characterSwitcher.heldObject.name) {
+			canvasIconManager.Show();
 		}
 	}
 
@@ -49,33 +53,19 @@ public class AnimationInteractionObject : Interactable {
 				Debug.Log($"No animator in {name}");
 			}
 			if (audioClip != null) {
-				AudioSource.PlayClipAtPoint(audioClip,transform.position);
+				AudioSource.PlayClipAtPoint(audioClip, transform.position);
 			}
-			foreach (GameObject o in objectsToActivate) {
-				o.SetActive(true);
-			}
-			foreach (GameObject o in objectsToDeactivate) {
-				o.SetActive(false);
-			}
+			StartCoroutine(DelayedActivation());
 		}
 	}
 
-	public override void ShowInteractionAvailable() {
-		if (characterSwitcher.IsHoldingObject && objectNeeded.name == characterSwitcher.heldObject.name) {
-			iconCanvasGroup.alpha = Mathf.Lerp(iconCanvasGroup.alpha, 1, 0.9f);
-			if (iconCoroutine != null) StopCoroutine(iconCoroutine);
-			iconCoroutine = StartCoroutine(FadeOutIcon());
+	private IEnumerator DelayedActivation() {
+		yield return new WaitForSeconds(activationDelay);
+		foreach (GameObject o in objectsToActivate) {
+			o.SetActive(true);
 		}
-	}
-
-	private IEnumerator FadeOutIcon() {
-		float timer = duration;
-		while (timer > 0) {
-			float t = timer / duration;
-			iconCanvasGroup.alpha = t;
-			timer -= Time.deltaTime;
-			yield return null;
+		foreach (GameObject o in objectsToDeactivate) {
+			o.SetActive(false);
 		}
-		iconCanvasGroup.alpha = 0;
 	}
 }

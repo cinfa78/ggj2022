@@ -53,7 +53,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4346002956124639724, guid: 24d9211a6e058ea4688dc8ed777321f6, type: 3}
+  - {fileID: 2100000, guid: cdcdf0b3a624e9f49be51368b52ec4de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6060775544349131892}
-  m_Mesh: {fileID: -6544992745051315742, guid: 24d9211a6e058ea4688dc8ed777321f6, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7948099159521765224
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.949}
-  m_SizeDelta: {x: 1, y: 0.42}
+  m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7948099159704045800
 Canvas:
@@ -335,12 +335,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ee258a3a41cc34385fb5b7da7a5416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 7948099159704045800}
-  iconCanvasGroup: {fileID: 7948099160393893919}
-  message: Testo da visualizzare
-  duration: 0.3
-  minTimeout: 1
-  fadeDuration: 1
+  canvasIconManager: {fileID: 1645927793087639896}
+  message: Lorem Ipsum Dolet sit Amet
+  showTextMultipleTimes: 0
+  storyAdvanced: 0
+  objectsToActivate: []
+  objectsToDeactivate: []
 --- !u!114 &7948099160016201246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,10 +422,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Who are the people in this picture?
+  m_text: Lorem Ipsum Dolet sit Amet
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dfbec9fa0b8258d4c972ade94859a275, type: 2}
-  m_sharedMaterial: {fileID: 4382193893217913926, guid: dfbec9fa0b8258d4c972ade94859a275,
+  m_fontAsset: {fileID: 11400000, guid: 0dbf72b0dd8365641a1702a5242bb35f, type: 2}
+  m_sharedMaterial: {fileID: -1243312745835257926, guid: 0dbf72b0dd8365641a1702a5242bb35f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -452,8 +454,8 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 0.2
-  m_fontSizeMax: 2
+  m_fontSizeMin: 0.1
+  m_fontSizeMax: 5
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -503,8 +505,9 @@ GameObject:
   - component: {fileID: 7948099160393893913}
   - component: {fileID: 7948099160393893918}
   - component: {fileID: 7948099160393893919}
+  - component: {fileID: 1645927793087639896}
   m_Layer: 5
-  m_Name: Canvas Interaction
+  m_Name: Canvas Interaction Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,3 +607,17 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1645927793087639896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948099160393893917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00768a0314f6d74b83f64afd9761158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
+  fadeTimingSetup: {fileID: 11400000, guid: c5475c165a134bc4284f13858276f995, type: 2}

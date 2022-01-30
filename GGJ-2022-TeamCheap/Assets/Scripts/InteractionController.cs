@@ -29,11 +29,6 @@ public class InteractionController : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown("Fire1")) {
-			Debug.Log($"Button down!");
-			// This would cast rays only against colliders in layer 3.
-
-			// Does the ray intersect any objects excluding the player layer
-
 			if (Physics.Raycast(ray, out hit, maxDistanceInteract, layerMask)) {
 				Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.yellow, 1);
 				Interactable ic = hit.collider.GetComponent<Interactable>();
@@ -43,7 +38,6 @@ public class InteractionController : MonoBehaviour {
 			}
 			else {
 				Debug.DrawRay(ray.origin, ray.direction * 1000, Color.white, 0.1f);
-				//Debug.Log("Did not Hit");
 			}
 		}
 		if (Input.GetButtonDown("Fire2")) {

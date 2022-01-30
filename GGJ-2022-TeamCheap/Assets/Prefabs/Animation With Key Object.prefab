@@ -61,7 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectNeeded: {fileID: 0}
-  iconCanvasGroup: {fileID: 1287284273550589126}
+  canvasIconManager: {fileID: 1273758324850099703}
+  audioClip: {fileID: 8300000, guid: 06742352b27aafa4080f19227dad8db0, type: 3}
   objectsToActivate: []
   objectsToDeactivate: []
 --- !u!1 &5714601809044982473
@@ -154,6 +155,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5714601807918854739}
     m_Modifications:
+    - target: {fileID: 6814793035329845272, guid: d9c01cca86d255444939e2d73e185db8,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6814793035329845275, guid: d9c01cca86d255444939e2d73e185db8,
         type: 3}
       propertyPath: m_Pivot.x
@@ -277,12 +283,18 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c01cca86d255444939e2d73e185db8, type: 3}
---- !u!225 &1287284273550589126 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 6814793035329845274, guid: d9c01cca86d255444939e2d73e185db8,
+--- !u!114 &1273758324850099703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6837331077181915435, guid: d9c01cca86d255444939e2d73e185db8,
     type: 3}
   m_PrefabInstance: {fileID: 5714601808044344540}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00768a0314f6d74b83f64afd9761158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1287284273550589127 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6814793035329845275, guid: d9c01cca86d255444939e2d73e185db8,

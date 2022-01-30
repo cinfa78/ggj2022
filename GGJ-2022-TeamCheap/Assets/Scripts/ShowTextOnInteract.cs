@@ -1,35 +1,38 @@
 using System.Collections;
+using DefaultNamespace;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
 public class ShowTextOnInteract : Interactable {
+	public TextTimingSetup textTimingSetup;
 	public Canvas canvasText;
-	public CanvasGroup iconCanvasGroup;
-	[TextArea] public string message;
+	[TextArea] [OnValueChanged("UpdateLabel")]
+	public string message;
+	public AudioClip audioClip;
+
+	public CanvasIconManager canvasIconManager;
+	public bool showTextMultipleTimes;
+	[ReadOnly] public bool storyAdvanced;
+	public GameObject[] objectsToActivate;
+	public GameObject[] objectsToDeactivate;
+
 	private CanvasGroup textCanvasGroup;
 	private TMP_Text label;
 	private int textLength;
-	public float duration = 0.3f;
-	public float minTimeout;
-	public float perLetterTime = 0.05f;
-	public float fadeDuration;
 	private Collider collider;
-	public GameObject[] objectsToActivate;
-	public GameObject[] objectsToDeactivate;
-	private Coroutine iconCoroutine;
-	private Coroutine textCoroutine;
+
 	private bool skip;
 
-	public bool showTextMultipleTimes;
-	[ReadOnly] public bool storyAdvanced;
+	private Coroutine iconCoroutine;
+	private Coroutine textCoroutine;
+	private bool delayedDeactivation;
 
 	private void Awake() {
 		textCanvasGroup = canvasText.GetComponent<CanvasGroup>();
 		textCanvasGroup.alpha = 0;
 		label = canvasText.GetComponentInChildren<TMP_Text>();
 		textLength = label.text.Length;
-		iconCanvasGroup.alpha = 0;
 		foreach (GameObject o in objectsToActivate) {
 			o.SetActive(false);
 		}
@@ -40,15 +43,21 @@ public class ShowTextOnInteract : Interactable {
 		label.text = message;
 	}
 
+	private void UpdateLabel() {
+		label = canvasText.GetComponentInChildren<TMP_Text>();
+		if (label != null)
+			label.text = message;
+	}
+
 	public override void Interact() {
 		if (showTextMultipleTimes) {
 			if (textCoroutine != null) StopCoroutine(textCoroutine);
-			textCoroutine = StartCoroutine(FadeOutText());
+			textCoroutine = StartCoroutine(FadeOutText(false));
 		}
 		else {
 			if (!storyAdvanced) {
 				if (textCoroutine != null) StopCoroutine(textCoroutine);
-				textCoroutine = StartCoroutine(FadeOutTextOnce());
+				textCoroutine = StartCoroutine(FadeOutText(true));
 				storyAdvanced = true;
 			}
 		}
@@ -59,80 +68,92 @@ public class ShowTextOnInteract : Interactable {
 	}
 
 	public override void ShowInteractionAvailable() {
-		iconCanvasGroup.alpha = 1;
-		if (iconCoroutine != null) StopCoroutine(iconCoroutine);
-		iconCoroutine = StartCoroutine(FadeOutIcon());
+		canvasIconManager?.Show();
 	}
 
-	private IEnumerator FadeOutIcon() {
-		float timer = duration;
-		while (timer > 0) {
-			float t = timer / duration;
-			iconCanvasGroup.alpha = t;
-			timer -= Time.deltaTime;
-			yield return null;
-		}
-		iconCanvasGroup.alpha = 0;
-	}
-
-	private IEnumerator FadeOutText() {
+	private IEnumerator FadeOutText(bool once) {
+		collider.enabled = false;
 		textCanvasGroup.alpha = 0;
-		float timer = fadeDuration / 2;
+		float timer = textTimingSetup.fadeInTime;
 		while (timer > 0 && !skip) {
-			float t = timer / fadeDuration;
+			float t = timer / textTimingSetup.fadeInTime;
 			textCanvasGroup.alpha = 1 - t;
 			timer -= Time.deltaTime;
 			yield return null;
 		}
 		textCanvasGroup.alpha = 1;
-		float timeout = minTimeout - fadeDuration / 2f + textLength * perLetterTime;
+		float timeout = textTimingSetup.minDisplayedTime + textLength * textTimingSetup.perLetterDelay;
 		timer = timeout;
 		while (timer > 0 && !skip) {
 			timer -= Time.deltaTime;
 			yield return null;
 		}
-		timer = fadeDuration;
+		timer = textTimingSetup.fadeOutTime;
 		while (timer > 0 && !skip) {
-			float t = timer / fadeDuration;
+			float t = timer / textTimingSetup.fadeOutTime;
 			textCanvasGroup.alpha = t;
 			timer -= Time.deltaTime;
 			yield return null;
 		}
 		textCanvasGroup.alpha = 0;
 		skip = false;
+		if (once) {
+			if (audioClip != null) {
+				AudioSource.PlayClipAtPoint(audioClip, transform.position);
+			}
+			foreach (GameObject o in objectsToActivate) {
+				o.SetActive(true);
+			}
+			foreach (GameObject o in objectsToDeactivate) {
+				if (o == gameObject) {
+					delayedDeactivation = true;
+				}
+				else {
+					o.SetActive(false);
+				}
+			}
+			collider.enabled = false;
+			StopAllCoroutines();
+			canvasIconManager.Hide();
+			gameObject.SetActive(false);
+		}
+		else {
+			collider.enabled = true;
+		}
 	}
+	
 
-	private IEnumerator FadeOutTextOnce() {
-		textCanvasGroup.alpha = 0;
-		float timer = fadeDuration / 2;
-		while (timer > 0 && !skip) {
-			float t = timer / fadeDuration;
-			textCanvasGroup.alpha = 1 - t;
-			timer -= Time.deltaTime;
-			yield return null;
-		}
-		textCanvasGroup.alpha = 1;
-		float timeout = minTimeout - fadeDuration / 2 + textLength * 0.1f;
-		timer = timeout;
-		while (timer > 0 && !skip) {
-			timer -= Time.deltaTime;
-			yield return null;
-		}
-		timer = fadeDuration;
-		while (timer > 0 && !skip) {
-			float t = timer / fadeDuration;
-			textCanvasGroup.alpha = t;
-			timer -= Time.deltaTime;
-			yield return null;
-		}
-		textCanvasGroup.alpha = 0;
-		foreach (GameObject o in objectsToActivate) {
-			o.SetActive(true);
-		}
-		foreach (GameObject o in objectsToDeactivate) {
-			o.SetActive(false);
-		}
-		skip = false;
-		Destroy(collider);
-	}
+	// private IEnumerator FadeOutTextOnce() {
+	// 	textCanvasGroup.alpha = 0;
+	// 	float timer = fadeDuration / 2;
+	// 	while (timer > 0 && !skip) {
+	// 		float t = timer / fadeDuration;
+	// 		textCanvasGroup.alpha = 1 - t;
+	// 		timer -= Time.deltaTime;
+	// 		yield return null;
+	// 	}
+	// 	textCanvasGroup.alpha = 1;
+	// 	float timeout = minTimeout - fadeDuration / 2 + textLength * 0.1f;
+	// 	timer = timeout;
+	// 	while (timer > 0 && !skip) {
+	// 		timer -= Time.deltaTime;
+	// 		yield return null;
+	// 	}
+	// 	timer = fadeDuration;
+	// 	while (timer > 0 && !skip) {
+	// 		float t = timer / fadeDuration;
+	// 		textCanvasGroup.alpha = t;
+	// 		timer -= Time.deltaTime;
+	// 		yield return null;
+	// 	}
+	// 	textCanvasGroup.alpha = 0;
+	// 	foreach (GameObject o in objectsToActivate) {
+	// 		o.SetActive(true);
+	// 	}
+	// 	foreach (GameObject o in objectsToDeactivate) {
+	// 		o.SetActive(false);
+	// 	}
+	// 	skip = false;
+	// 	Destroy(collider);
+	// }
 }

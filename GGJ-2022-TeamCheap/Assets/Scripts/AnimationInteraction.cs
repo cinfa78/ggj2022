@@ -1,11 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationInteraction : Interactable {
-	public CanvasGroup iconCanvasGroup;
-	public float duration = 0.3f;
+	public CanvasIconManager canvasIconManager;
 	private Animator animator;
 	private Coroutine iconCoroutine;
 	private bool animationOver;
@@ -13,7 +9,6 @@ public class AnimationInteraction : Interactable {
 
 	private void Awake() {
 		animator = GetComponent<Animator>();
-		iconCanvasGroup.alpha = 0;
 	}
 
 	public override void Interact() {
@@ -28,20 +23,7 @@ public class AnimationInteraction : Interactable {
 
 	public override void ShowInteractionAvailable() {
 		if (!animationOver) {
-			iconCanvasGroup.alpha = 1;
-			if (iconCoroutine != null) StopCoroutine(iconCoroutine);
-			iconCoroutine = StartCoroutine(FadeOutIcon());
+			canvasIconManager.Show();
 		}
-	}
-
-	private IEnumerator FadeOutIcon() {
-		float timer = duration;
-		while (timer > 0) {
-			float t = timer / duration;
-			iconCanvasGroup.alpha = t;
-			timer -= Time.deltaTime;
-			yield return null;
-		}
-		iconCanvasGroup.alpha = 0;
 	}
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3912772899281270207}
   - component: {fileID: 3912772899281270206}
   - component: {fileID: 3912772899281270205}
+  - component: {fileID: 158799837129642348}
   m_Layer: 5
   m_Name: Canvas Icon
   m_TagString: Untagged
@@ -115,6 +116,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &158799837129642348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3912772899281270195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00768a0314f6d74b83f64afd9761158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
+  fadeTimingSetup: {fileID: 11400000, guid: c5475c165a134bc4284f13858276f995, type: 2}
 --- !u!1 &3912772899959245760
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,8 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6052e9a336d0b745bfcfd724891ddb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconCanvasGroup: {fileID: 3912772899281270205}
-  duration: 0.4
+  canvasIconManager: {fileID: 158799837129642348}
+  audioClip: {fileID: 8300000, guid: a1696c37c1548434aa4ccceb463d5b3c, type: 3}
 --- !u!1 &3912772900927365148
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 0d81aac2214481941a5042889613a73e, type: 2}
+  m_Color: {r: 0.4575472, g: 0.6989181, b: 1, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -362,8 +377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 0d81aac2214481941a5042889613a73e, type: 2}
+  m_Color: {r: 0.5566038, g: 0.28375882, b: 0, a: 0.627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

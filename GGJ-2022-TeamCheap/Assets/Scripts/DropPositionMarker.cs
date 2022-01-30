@@ -1,4 +1,5 @@
 using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
 
@@ -6,14 +7,15 @@ public class DropPositionMarker : Interactable {
 	public float radius = 0.5f;
 	public Pickable droppableObject;
 	private SphereCollider sphereCollider;
-	public CanvasGroup iconCanvasGroup;
-	private Coroutine iconCoroutine;
-	public float duration = 0.3f;
-	private CharacterSwitcher characterSwitcher;
-	public bool storyAdvanced;
+	public CanvasIconManager canvasIconManager;
+
 	public AudioClip audioClip;
+
+	[ReadOnly] public bool storyAdvanced;
 	public GameObject[] objectsToActivate;
 	public GameObject[] objectsToDeactivate;
+
+	private CharacterSwitcher characterSwitcher;
 
 	private void Awake() {
 		characterSwitcher = FindObjectOfType<CharacterSwitcher>();
@@ -21,7 +23,6 @@ public class DropPositionMarker : Interactable {
 		sphereCollider = gameObject.AddComponent<SphereCollider>();
 		sphereCollider.isTrigger = true;
 		sphereCollider.radius = radius;
-		iconCanvasGroup.alpha = 0;
 	}
 
 	private void Start() {
@@ -31,23 +32,9 @@ public class DropPositionMarker : Interactable {
 	}
 
 	public override void ShowInteractionAvailable() {
-		Debug.Log($"{characterSwitcher.IsHoldingObject} {characterSwitcher.heldObject} {droppableObject}");
 		if (characterSwitcher.IsHoldingObject && characterSwitcher.heldObject.name == droppableObject.name) {
-			iconCanvasGroup.alpha = 1;
-			if (iconCoroutine != null) StopCoroutine(iconCoroutine);
-			iconCoroutine = StartCoroutine(FadeOutIcon());
+			canvasIconManager.Show();
 		}
-	}
-
-	private IEnumerator FadeOutIcon() {
-		float timer = duration;
-		while (timer > 0) {
-			float t = timer / duration;
-			iconCanvasGroup.alpha = t;
-			timer -= Time.deltaTime;
-			yield return null;
-		}
-		iconCanvasGroup.alpha = 0;
 	}
 
 	public override void Interact() {
@@ -69,11 +56,11 @@ public class DropPositionMarker : Interactable {
 			else {
 				droppableObject.mirroredObject.transform.parent = null;
 			}
-			
+
 			droppableObject.GetComponent<Pickable>().PutDown();
-			
+
 			droppableObject.GetComponent<MirrorTransform>().enabled = true;
-			
+
 			if (audioClip != null) {
 				AudioSource.PlayClipAtPoint(audioClip, transform.position);
 			}

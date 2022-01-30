@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.25
   droppableObject: {fileID: 0}
-  iconCanvasGroup: {fileID: 9188689860032215396}
-  duration: 0.3
+  canvasIconManager: {fileID: 8761298754858451566}
+  audioClip: {fileID: 8300000, guid: e05834ff90a67b74092f7eb20820f0df, type: 3}
   storyAdvanced: 0
   objectsToActivate: []
   objectsToDeactivate: []
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 9188689859441378903}
   - component: {fileID: 9188689859441378902}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 0d81aac2214481941a5042889613a73e, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 9188689860032215394}
   - component: {fileID: 9188689860032215397}
   - component: {fileID: 9188689860032215396}
+  - component: {fileID: 8761298754858451566}
   m_Layer: 5
   m_Name: Canvas Icon
   m_TagString: Untagged
@@ -242,3 +243,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &8761298754858451566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188689860032215398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00768a0314f6d74b83f64afd9761158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
+  fadeTimingSetup: {fileID: 11400000, guid: c5475c165a134bc4284f13858276f995, type: 2}

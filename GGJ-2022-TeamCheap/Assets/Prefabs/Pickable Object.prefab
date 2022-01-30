@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 6607801104481694009}
   - component: {fileID: 6607801104481694014}
   - component: {fileID: 6607801104481694011}
+  - component: {fileID: 7525517183866280005}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -190,6 +191,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &7525517183866280005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6607801104481694012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00768a0314f6d74b83f64afd9761158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
+  fadeTimingSetup: {fileID: 11400000, guid: c5475c165a134bc4284f13858276f995, type: 2}
 --- !u!1 &6607801104933180379
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,9 +368,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Lamp
   mirroredObject: {fileID: 0}
-  duration: 0.2
-  canvasGroup: {fileID: 6607801104481694011}
+  canvasIconManager: {fileID: 7525517183866280005}
   canvasOrienter: {fileID: 6607801104933180379}
+  audioClip: {fileID: 8300000, guid: e05834ff90a67b74092f7eb20820f0df, type: 3}
 --- !u!114 &6607801105293616433
 MonoBehaviour:
   m_ObjectHideFlags: 0
