@@ -52,16 +52,30 @@ public class DropPositionMarker : Interactable {
 
 	public override void Interact() {
 		if (characterSwitcher.IsHoldingObject && characterSwitcher.heldObject.name == droppableObject.name) {
+			Debug.Log($"Dropping {characterSwitcher.heldObject.name}");
 			droppableObject.transform.parent = null;
 			droppableObject.transform.position = transform.position;
 			droppableObject.transform.rotation = transform.rotation;
 			characterSwitcher.heldObject = null;
-			droppableObject.GetComponent<MirrorTransform>().enabled = true;
-			droppableObject.GetComponent<MirrorTransform>().mirroredObject.GetComponent<MirrorTransform>().enabled = true;
+
+			MirrorTransform mirroredMirrorTransform = droppableObject.GetComponent<MirrorTransform>().mirroredObject.GetComponent<MirrorTransform>();
+			if (mirroredMirrorTransform != null) {
+				mirroredMirrorTransform.enabled = true;
+			}
+			var mirroredPickable = droppableObject.mirroredObject.GetComponent<Pickable>();
+			if (mirroredPickable != null) {
+				droppableObject.mirroredObject.GetComponent<Pickable>().PutDown();
+			}
+			else {
+				droppableObject.mirroredObject.transform.parent = null;
+			}
+			
 			droppableObject.GetComponent<Pickable>().PutDown();
-			droppableObject.mirroredObject.GetComponent<Pickable>().PutDown();
+			
+			droppableObject.GetComponent<MirrorTransform>().enabled = true;
+			
 			if (audioClip != null) {
-				AudioSource.PlayClipAtPoint(audioClip,transform.position);
+				AudioSource.PlayClipAtPoint(audioClip, transform.position);
 			}
 			if (!storyAdvanced) {
 				storyAdvanced = true;

@@ -30,7 +30,7 @@ public class Pickable : Interactable {
 	public override void Interact() {
 		if (characterSwitcher.IsHoldingObject == false) {
 			if (audioClip != null) {
-				AudioSource.PlayClipAtPoint(audioClip,transform.position);
+				AudioSource.PlayClipAtPoint(audioClip, transform.position);
 			}
 			mirrorTransform.enabled = false;
 			rigidbody.isKinematic = true;
@@ -68,7 +68,10 @@ public class Pickable : Interactable {
 	public override void ShowInteractionAvailable() {
 		if (mirrorTransform.enabled) {
 			mirrorTransform.enabled = false;
-			mirroredObject.GetComponent<MirrorTransform>().enabled = true;
+			var mirroredMirrorTransform = mirroredObject.GetComponent<MirrorTransform>();
+			if (mirroredMirrorTransform != null) {
+				mirroredMirrorTransform.enabled = true;
+			}
 		}
 		if (characterSwitcher.IsHoldingObject == false) {
 			canvasOrienter.transform.LookAt(Camera.main.transform);
