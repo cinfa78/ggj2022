@@ -1597,8 +1597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 18.71, y: -180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0.906}
-  m_SizeDelta: {x: 1, y: 0.42}
+  m_AnchoredPosition: {x: 0.0798, y: 0.906}
+  m_SizeDelta: {x: 1.5475, y: 0.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &213494104
 CanvasGroup:
@@ -4461,7 +4461,7 @@ GameObject:
   - component: {fileID: 601622789}
   - component: {fileID: 601622788}
   m_Layer: 3
-  m_Name: Scrigno
+  m_Name: ScrignoVecchio1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4527,7 +4527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasText: {fileID: 213494107}
   iconCanvasGroup: {fileID: 314227694}
-  message: Testo da visualizzare
+  message: Ouch my back!
   duration: 0.3
   minTimeout: 1
   perLetterTime: 0.05
@@ -5346,9 +5346,12 @@ MonoBehaviour:
   minTimeout: 0
   perLetterTime: 0.01
   fadeDuration: 0.5
-  objectsToActivate: []
-  objectsToDeactivate: []
-  showTextMultipleTimes: 1
+  objectsToActivate:
+  - {fileID: 601622786}
+  - {fileID: 1668849959830921570}
+  objectsToDeactivate:
+  - {fileID: 671938678}
+  showTextMultipleTimes: 0
   storyAdvanced: 0
 --- !u!65 &671938682
 BoxCollider:
@@ -15466,7 +15469,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673010045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15475,7 +15478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1673010047
@@ -15498,7 +15501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Who are the people in this picture?
+  m_text: Ouch my back!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dbf72b0dd8365641a1702a5242bb35f, type: 2}
   m_sharedMaterial: {fileID: -1243312745835257926, guid: 0dbf72b0dd8365641a1702a5242bb35f,
@@ -15562,7 +15565,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -0.21867478, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -19635,7 +19638,7 @@ GameObject:
   - component: {fileID: 1668849959830921580}
   - component: {fileID: 1668849959830921583}
   m_Layer: 3
-  m_Name: Scrigno
+  m_Name: ScrignoBimbo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
