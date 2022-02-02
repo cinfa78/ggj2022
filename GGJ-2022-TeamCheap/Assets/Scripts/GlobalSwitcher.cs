@@ -14,9 +14,15 @@ public class GlobalSwitcher : MonoBehaviour {
 		Switch?.Invoke();
 	}
 
+
 	private void Update() {
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			Debug.Log($"Escape Pressed");
+		}
+#if DEBUG
 		if (Input.GetKeyDown(KeyCode.F1)) {
 			CallSwitch();
 		}
+#endif
 	}
 }

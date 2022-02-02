@@ -9,7 +9,6 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 	[RequireComponent(typeof(CharacterController))]
 	[RequireComponent(typeof(AudioSource))]
 	public class FirstPersonController : MonoBehaviour {
-
 		public GameObject heldObjectPos;
 		public GameObject cameraGameObject;
 		[SerializeField] private bool m_IsWalking;
@@ -31,6 +30,15 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 		[SerializeField] private AudioClip m_LandSound; // the sound played when character touches back on ground.
 
 		public Camera m_Camera;
+
+		public bool externalMovement;
+		public Vector2 externalMovementInput;
+		public bool externalRotation;
+		public Vector2 externalRotationInput;
+		public bool externalRotationLookAt;
+		public Vector3 externalRotationLookAtPosition;
+		private Quaternion m_CharacterTargetRot;
+		private Quaternion m_CameraTargetRot;
 
 		private bool m_Jump;
 		private float m_YRotation;
@@ -70,7 +78,8 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 			RotateView();
 			// the jump state needs to read here to make sure it is not missed
 			if (!m_Jump) {
-				m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+				//m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+				m_Jump = Input.GetButtonDown("Jump"); //CrossPlatformInputManager.GetButtonDown("Jump");
 			}
 
 			if (!m_PreviouslyGrounded && m_CharacterController.isGrounded) {
@@ -93,8 +102,16 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 		}
 
 		private void FixedUpdate() {
-			float speed;
-			GetInput(out speed);
+			float speed = 0;
+			if (externalMovement) {
+				speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+				m_Input = externalMovementInput;
+			}
+			else {
+				//GetInput initialize m_Input
+				GetInput(out speed);
+			}
+
 			// always move along the camera forward as it is the direction that it being aimed at
 			Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
 
@@ -184,16 +201,15 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 
 		private void GetInput(out float speed) {
 			// Read input
-			float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-			float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+			//float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+			//float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+			float horizontal = Input.GetAxis("Horizontal");
+			float vertical = Input.GetAxis("Vertical");
 
-			bool waswalking = m_IsWalking;
+			bool wasWalking = m_IsWalking;
 
-#if !MOBILE_INPUT
-			// On standalone builds, walk/run speed is modified by a key press.
-			// keep track of whether or not the character is walking or running
 			m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
-#endif
+
 			// set the desired speed to be walking or running
 			speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
 			m_Input = new Vector2(horizontal, vertical);
@@ -205,14 +221,41 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 
 			// handle speed change to give an fov kick
 			// only if the player is going to a run, is running and the fovkick is to be used
-			if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0) {
+			if (m_IsWalking != wasWalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0) {
 				StopAllCoroutines();
 				StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
 			}
 		}
 
 		private void RotateView() {
-			m_MouseLook.LookRotation(transform, m_Camera.transform);
+			if (externalRotation) {
+				float yRot = externalRotationInput.x * m_MouseLook.XSensitivity;
+				float xRot = externalRotationInput.y * m_MouseLook.YSensitivity;
+
+				m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
+				m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
+
+				transform.localRotation = Quaternion.Slerp(transform.localRotation, m_CharacterTargetRot, m_MouseLook.smoothTime * Time.deltaTime);
+				m_Camera.transform.localRotation = Quaternion.Slerp(m_Camera.transform.localRotation, m_CameraTargetRot, m_MouseLook.smoothTime * Time.deltaTime);
+				//sync with mouselook
+				m_MouseLook.m_CharacterTargetRot = m_CharacterTargetRot;
+				m_MouseLook.m_CameraTargetRot = m_CameraTargetRot;
+			}
+			else if (externalRotationLookAt) {
+				var lookAtRotation = Quaternion.LookRotation(externalRotationLookAtPosition - m_Camera.transform.position).eulerAngles;
+
+				m_CharacterTargetRot = Quaternion.Euler(0f, lookAtRotation.y, 0f);
+				m_CameraTargetRot = Quaternion.Euler(lookAtRotation.x, 0f, 0f);
+
+				transform.localRotation = Quaternion.Slerp(transform.localRotation, m_CharacterTargetRot, m_MouseLook.smoothTime * Time.deltaTime);
+				m_Camera.transform.localRotation = Quaternion.Slerp(m_Camera.transform.localRotation, m_CameraTargetRot, m_MouseLook.smoothTime * Time.deltaTime);
+				//sync with mouselook
+				m_MouseLook.m_CharacterTargetRot = m_CharacterTargetRot;
+				m_MouseLook.m_CameraTargetRot = m_CameraTargetRot;
+			}
+			else {
+				m_MouseLook.LookRotation(transform, m_Camera.transform);
+			}
 		}
 
 		private void OnControllerColliderHit(ControllerColliderHit hit) {

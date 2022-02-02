@@ -6,6 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class CharacterSwitcher : MonoBehaviour {
 	public FirstPersonController oldFPC;
 	public FirstPersonController youngFPC;
+	private FirstPersonController currentFPC;
 
 	private CharacterController oldCC;
 	private CharacterController youngCC;
@@ -45,6 +46,11 @@ public class CharacterSwitcher : MonoBehaviour {
 		oldMT.enabled = false;
 		oldFPC.cameraGameObject.GetComponent<AudioListener>().enabled = true;
 		oldFPC.cameraGameObject.GetComponent<Camera>().enabled = true;
+		currentFPC = oldFPC;
+	}
+
+	public void ForceLookAt() {
+		currentFPC.enabled = false;
 	}
 
 	private void Switch() {
@@ -70,5 +76,18 @@ public class CharacterSwitcher : MonoBehaviour {
 			heldObject = mirroredObject;
 			heldObject.GameObject().transform.localPosition = Vector3.zero;
 		}
+		currentFPC = oldActive ? oldFPC : youngFPC;
+	}
+
+	[Button("Test Look At")]
+	private void LookAtOrigin(Vector3 target) {
+		currentFPC.externalRotationLookAt = true;
+		currentFPC.externalRotationLookAtPosition = Vector3.zero;
+	}
+
+	[Button("Release Look At")]
+	private void UnlockFPC() {
+		currentFPC.externalRotation = false;
+		currentFPC.externalRotationLookAt = false;
 	}
 }
