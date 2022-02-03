@@ -4,19 +4,20 @@ public class AnimationInteraction : Interactable {
 	public CanvasIconManager canvasIconManager;
 	private Animator animator;
 	private Coroutine iconCoroutine;
+	private TheDay.Action[] actions;
 	private bool animationOver;
-	public AudioClip audioClip;
-
+	
 	private void Awake() {
 		animator = GetComponent<Animator>();
+		actions = GetComponents<TheDay.Action>();
 	}
 
 	public override void Interact() {
 		if (!animationOver) {
 			animator.SetTrigger("start");
 			animationOver = true;
-			if (audioClip != null) {
-				AudioSource.PlayClipAtPoint(audioClip, transform.position);
+			foreach (var action in actions) {
+				action.Execute(gameObject);
 			}
 		}
 	}

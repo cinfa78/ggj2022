@@ -1,5 +1,6 @@
 using System.Collections;
 using Sirenix.OdinInspector;
+using TheDay;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,12 +10,8 @@ public class DropPositionMarker : Interactable {
 	private SphereCollider sphereCollider;
 	public CanvasIconManager canvasIconManager;
 
-	public AudioClip audioClip;
-
 	[ReadOnly] public bool storyAdvanced;
-	public GameObject[] objectsToActivate;
-	public GameObject[] objectsToDeactivate;
-
+	private TheDay.Action[] actions;
 	private CharacterSwitcher characterSwitcher;
 
 	private void Awake() {
@@ -23,12 +20,7 @@ public class DropPositionMarker : Interactable {
 		sphereCollider = gameObject.AddComponent<SphereCollider>();
 		sphereCollider.isTrigger = true;
 		sphereCollider.radius = radius;
-	}
-
-	private void Start() {
-		foreach (var o in objectsToActivate) {
-			o.SetActive(false);
-		}
+		actions = GetComponents<Action>();
 	}
 
 	public override void ShowInteractionAvailable() {
@@ -61,16 +53,10 @@ public class DropPositionMarker : Interactable {
 
 			droppableObject.GetComponent<MirrorTransform>().enabled = true;
 
-			if (audioClip != null) {
-				AudioSource.PlayClipAtPoint(audioClip, transform.position);
-			}
 			if (!storyAdvanced) {
 				storyAdvanced = true;
-				foreach (var o in objectsToActivate) {
-					o.SetActive(true);
-				}
-				foreach (var o in objectsToDeactivate) {
-					o.SetActive(false);
+				foreach (var action in actions) {
+					action.Execute(gameObject);
 				}
 			}
 		}

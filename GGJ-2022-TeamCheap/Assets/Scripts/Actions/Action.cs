@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace TheDay {
-	public abstract class Action : ScriptableObject {
-		public virtual void Execute() { }
+	[Serializable]public abstract class Action : MonoBehaviour {
+		public float delay;
+		public virtual void Execute(GameObject caller) { }
 	}
 }

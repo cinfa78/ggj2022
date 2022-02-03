@@ -6,11 +6,8 @@ public class AnimationInteractionObject : Interactable {
 	public Pickable objectNeeded;
 
 	public CanvasIconManager canvasIconManager;
-	public AudioClip audioClip;
-	public GameObject[] objectsToActivate;
-	public GameObject[] objectsToDeactivate;
-	public float activationDelay = 0f;
 
+	private TheDay.Action[] actions;
 	private Animator animator;
 	private Collider collider;
 	private CharacterSwitcher characterSwitcher;
@@ -20,9 +17,7 @@ public class AnimationInteractionObject : Interactable {
 		characterSwitcher = FindObjectOfType<CharacterSwitcher>();
 		animator = GetComponent<Animator>();
 		collider = GetComponent<Collider>();
-		foreach (GameObject o in objectsToActivate) {
-			o.SetActive(false);
-		}
+		actions = GetComponents<TheDay.Action>();
 	}
 
 	private void OnDrawGizmos() {
@@ -52,20 +47,9 @@ public class AnimationInteractionObject : Interactable {
 			else {
 				Debug.Log($"No animator in {name}");
 			}
-			if (audioClip != null) {
-				AudioSource.PlayClipAtPoint(audioClip, transform.position);
+			foreach (var action in actions) {
+				action.Execute(gameObject);
 			}
-			StartCoroutine(DelayedActivation());
-		}
-	}
-
-	private IEnumerator DelayedActivation() {
-		yield return new WaitForSeconds(activationDelay);
-		foreach (GameObject o in objectsToActivate) {
-			o.SetActive(true);
-		}
-		foreach (GameObject o in objectsToDeactivate) {
-			o.SetActive(false);
 		}
 	}
 }

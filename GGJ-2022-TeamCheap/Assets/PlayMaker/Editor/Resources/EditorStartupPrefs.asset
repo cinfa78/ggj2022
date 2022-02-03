@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   welcomeScreenVersion: '1.9.4 '
   playmakerVersion: 
-  showWelcomeScreen: 1
+  showWelcomeScreen: 0
   showUpgradeGuide: 0
   lastAutoUpdateSignature: 2021.2.7f1__G:/Cinfa/Documents/Unity/ggj2022/GGJ-2022-TeamCheap/Assets__0.0.0.0
   useLegacyNetworking: 0

@@ -1,22 +1,23 @@
 using System.Collections;
 using DefaultNamespace;
 using Sirenix.OdinInspector;
+using TheDay;
 using TMPro;
 using UnityEngine;
 
 public class ShowTextOnInteract : Interactable {
 	public TextTimingSetup textTimingSetup;
 	public Canvas canvasText;
-	[TextArea] [OnValueChanged("UpdateLabel")]
+	[TextArea(5, 10)] [OnValueChanged("UpdateLabel")]
 	public string message;
-	public AudioClip audioClip;
 
 	public CanvasIconManager canvasIconManager;
+	public bool forceLookAt;
 	public bool showTextMultipleTimes;
 	[ReadOnly] public bool storyAdvanced;
-	public GameObject[] objectsToActivate;
-	public GameObject[] objectsToDeactivate;
+	private TheDay.Action[] actions;
 
+	private CharacterSwitcher characterSwitcher;
 	private CanvasGroup textCanvasGroup;
 	private TMP_Text label;
 	private int textLength;
@@ -33,10 +34,9 @@ public class ShowTextOnInteract : Interactable {
 		textCanvasGroup.alpha = 0;
 		label = canvasText.GetComponentInChildren<TMP_Text>();
 		textLength = label.text.Length;
-		foreach (GameObject o in objectsToActivate) {
-			o.SetActive(false);
-		}
 		collider = GetComponent<Collider>();
+		actions = GetComponents<Action>();
+		characterSwitcher = FindObjectOfType<CharacterSwitcher>();
 	}
 
 	private void Start() {
@@ -60,6 +60,9 @@ public class ShowTextOnInteract : Interactable {
 				textCoroutine = StartCoroutine(FadeOutText(true));
 				storyAdvanced = true;
 			}
+		}
+		if (forceLookAt) {
+			characterSwitcher.ForceLookAt(textCanvasGroup.gameObject);
 		}
 	}
 
@@ -98,19 +101,11 @@ public class ShowTextOnInteract : Interactable {
 		textCanvasGroup.alpha = 0;
 		skip = false;
 		if (once) {
-			if (audioClip != null) {
-				AudioSource.PlayClipAtPoint(audioClip, transform.position);
+			if (forceLookAt) {
+				characterSwitcher.ReleaseLookAt();
 			}
-			foreach (GameObject o in objectsToActivate) {
-				o.SetActive(true);
-			}
-			foreach (GameObject o in objectsToDeactivate) {
-				if (o == gameObject) {
-					delayedDeactivation = true;
-				}
-				else {
-					o.SetActive(false);
-				}
+			foreach (var action in actions) {
+				action.Execute(gameObject);
 			}
 			collider.enabled = false;
 			StopAllCoroutines();
@@ -118,42 +113,12 @@ public class ShowTextOnInteract : Interactable {
 			gameObject.SetActive(false);
 		}
 		else {
+			if (forceLookAt) {
+				characterSwitcher.ReleaseLookAt();
+			}
 			collider.enabled = true;
 		}
-	}
-	
 
-	// private IEnumerator FadeOutTextOnce() {
-	// 	textCanvasGroup.alpha = 0;
-	// 	float timer = fadeDuration / 2;
-	// 	while (timer > 0 && !skip) {
-	// 		float t = timer / fadeDuration;
-	// 		textCanvasGroup.alpha = 1 - t;
-	// 		timer -= Time.deltaTime;
-	// 		yield return null;
-	// 	}
-	// 	textCanvasGroup.alpha = 1;
-	// 	float timeout = minTimeout - fadeDuration / 2 + textLength * 0.1f;
-	// 	timer = timeout;
-	// 	while (timer > 0 && !skip) {
-	// 		timer -= Time.deltaTime;
-	// 		yield return null;
-	// 	}
-	// 	timer = fadeDuration;
-	// 	while (timer > 0 && !skip) {
-	// 		float t = timer / fadeDuration;
-	// 		textCanvasGroup.alpha = t;
-	// 		timer -= Time.deltaTime;
-	// 		yield return null;
-	// 	}
-	// 	textCanvasGroup.alpha = 0;
-	// 	foreach (GameObject o in objectsToActivate) {
-	// 		o.SetActive(true);
-	// 	}
-	// 	foreach (GameObject o in objectsToDeactivate) {
-	// 		o.SetActive(false);
-	// 	}
-	// 	skip = false;
-	// 	Destroy(collider);
-	// }
+		
+	}
 }

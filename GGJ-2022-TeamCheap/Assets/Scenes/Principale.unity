@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 70d90e37a9455944d93f50f5b0dfb50e,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d40b24dec407425428b8d190746635a4,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -850,7 +852,7 @@ PrefabInstance:
     - target: {fileID: 6814793035329845276, guid: d9c01cca86d255444939e2d73e185db8,
         type: 3}
       propertyPath: m_Name
-      value: Canvas Icona (1)
+      value: Canvas Icona
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c01cca86d255444939e2d73e185db8, type: 3}
@@ -898,9 +900,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69465273}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.208411, y: 0.038528994, z: -0.3354359}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 2.6099997, y: 0.038528994, z: -0.3308713}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2064010172}
   m_RootOrder: 1
@@ -1467,7 +1469,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &128164679
 Transform:
@@ -1818,7 +1820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "My marvelous car, I loved to travel on that wonder. But there was something
+  m_text: "My marvelous car, I loved to travel on that wonder.\nBut there is something
     I loved even more in this picture\u2026"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dbf72b0dd8365641a1702a5242bb35f, type: 2}
@@ -2141,9 +2143,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 182533177}
+  - component: {fileID: 182533178}
   - component: {fileID: 182533180}
   - component: {fileID: 182533179}
-  - component: {fileID: 182533178}
+  - component: {fileID: 182533182}
+  - component: {fileID: 182533181}
+  - component: {fileID: 182533183}
   m_Layer: 3
   m_Name: FedeStanzaVecchio
   m_TagString: Untagged
@@ -2210,16 +2215,57 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 881392448}
   message: She was my most precious thing...
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 137528059}
+  forceLookAt: 1
   showTextMultipleTimes: 0
   storyAdvanced: 0
+--- !u!114 &182533181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182533176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
   objectsToActivate:
   - {fileID: 111590424}
   - {fileID: 2087556509}
   - {fileID: 8929111995435944980}
   - {fileID: 724717844}
   - {fileID: 1805577736}
+--- !u!114 &182533182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182533176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 03d7bb2b9ea1d0946954b07c1b6775d0, type: 3}
+  volume: 1
+--- !u!114 &182533183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182533176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
   objectsToDeactivate:
   - {fileID: 182533176}
   - {fileID: 1311448779}
@@ -2341,8 +2387,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "My parents...\n I remember that day, they bought me a beautiful beautiful
-    toy car.\nWho knows where it is now."
+  m_text: 'My parents...
+
+    I remember that day, they bought me a beautiful beautiful
+    toy car.
+
+    I used to play with it on the bookshelf.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
   m_sharedMaterial: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
@@ -2437,7 +2487,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &188439965
 Transform:
@@ -3312,6 +3362,10 @@ GameObject:
   - component: {fileID: 237242345}
   - component: {fileID: 237242344}
   - component: {fileID: 237242343}
+  - component: {fileID: 237242349}
+  - component: {fileID: 237242348}
+  - component: {fileID: 237242347}
+  - component: {fileID: 237242350}
   m_Layer: 3
   m_Name: FotoGenitoriColoreUno
   m_TagString: Untagged
@@ -3346,19 +3400,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 629959965}
-  message: "My parents...\n I remember that day, they bought me a beautiful beautiful
-    toy car.\nWho knows where it is now."
-  audioClip: {fileID: 0}
+  message: 'My parents...
+
+    I remember that day, they bought me a beautiful beautiful
+    toy car.
+
+    I used to play with it on the bookshelf.'
   canvasIconManager: {fileID: 1951648838}
+  forceLookAt: 1
   showTextMultipleTimes: 0
   storyAdvanced: 0
-  objectsToActivate:
-  - {fileID: 453886104}
-  - {fileID: 1456687073}
-  - {fileID: 552267975}
-  objectsToDeactivate:
-  - {fileID: 237242342}
-  - {fileID: 1870513682}
 --- !u!65 &237242345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3390,6 +3441,69 @@ Transform:
   m_Father: {fileID: 1575744074}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &237242347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237242342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 237242342}
+  - {fileID: 1870513682}
+--- !u!114 &237242348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237242342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 453886104}
+  - {fileID: 1456687073}
+  - {fileID: 552267975}
+--- !u!114 &237242349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237242342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 03d7bb2b9ea1d0946954b07c1b6775d0, type: 3}
+  volume: 1
+--- !u!114 &237242350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237242342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e34cfaa25e4bcb96f1fb1884801968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectToLookAt: {fileID: 188439964}
+  lookForSeconds: 0.4
 --- !u!4 &240508365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053380814409787720, guid: be9f93828948f924a93d6caa1f54a1c8,
@@ -3593,7 +3707,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &247885368
 Transform:
@@ -4352,7 +4466,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &321874792
 Transform:
@@ -4863,6 +4977,104 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd3b7c1eb74f8f644b275c2be4d97371, type: 3}
+--- !u!1 &391572062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 391572063}
+  - component: {fileID: 391572066}
+  - component: {fileID: 391572065}
+  - component: {fileID: 391572064}
+  m_Layer: 3
+  m_Name: ray blocker cassetto (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &391572063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391572062}
+  m_LocalRotation: {x: -0, y: 0.70710695, z: -0, w: -0.7071067}
+  m_LocalPosition: {x: 0.392, y: -0.007459279, z: -0.454}
+  m_LocalScale: {x: -0.87293005, y: 0.27128184, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 750425968}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!64 &391572064
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391572062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &391572065
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391572062}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &391572066
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391572062}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -5056,12 +5268,10 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 37962096}
   message: We were thick as thieves...
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 1395898519}
+  forceLookAt: 0
   showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!1 &421759031
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,16 +5650,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 1676854307}
-  message: 'My parents, I remember that day, they bought me a beautiful beautiful
-    toy car.
+  message: 'My parents.
 
-    Who knows where it is now.'
-  audioClip: {fileID: 0}
+    That day they bought me a toy car.
+
+    I always kept
+    it on my bookshelf.'
   canvasIconManager: {fileID: 1508299350}
+  forceLookAt: 0
   showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!65 &453886108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5469,7 +5679,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh277492
+  m_Name: pb_Mesh112196
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5861,7 +6071,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &516053717
 Transform:
@@ -10986,6 +11196,70 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2024088924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &530972109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530972106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 530972106}
+  - {fileID: 1652060526}
+  - {fileID: 1589307324}
+--- !u!114 &530972110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530972106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 2040308188}
+  - {fileID: 1195447150}
+  - {fileID: 2108181100}
+--- !u!114 &530972111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530972106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: e05834ff90a67b74092f7eb20820f0df, type: 3}
+  volume: 0.5
+--- !u!114 &530972114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530972106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 03d7bb2b9ea1d0946954b07c1b6775d0, type: 3}
+  volume: 1
 --- !u!1 &531475311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4368071404816860959, guid: 24d9211a6e058ea4688dc8ed777321f6,
@@ -11089,6 +11363,104 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540697632}
   m_Mesh: {fileID: 3242085741686167483, guid: 24d9211a6e058ea4688dc8ed777321f6, type: 3}
+--- !u!1 &541601830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541601831}
+  - component: {fileID: 541601834}
+  - component: {fileID: 541601833}
+  - component: {fileID: 541601832}
+  m_Layer: 3
+  m_Name: ray blocker cassetto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &541601831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541601830}
+  m_LocalRotation: {x: -0, y: -1, z: 0, w: -0.0000005960464}
+  m_LocalPosition: {x: -0.009, y: -0.007459279, z: -0.039000034}
+  m_LocalScale: {x: -0.87293005, y: 0.27128184, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 750425968}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!64 &541601832
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541601830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &541601833
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541601830}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &541601834
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541601830}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &544789282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053380814409787720, guid: be9f93828948f924a93d6caa1f54a1c8,
@@ -11220,6 +11592,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7948099160016201244, guid: d16a09f0c93dec44ca4a2c599266b237,
     type: 3}
   m_PrefabInstance: {fileID: 1141059996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &552267977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552267975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 552267975}
+--- !u!114 &552267978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552267975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 1589307324}
+  - {fileID: 1652060526}
+--- !u!1 &575671505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9188689858550611898, guid: 42a5f30461524074bbd4628ce8e21095,
+    type: 3}
+  m_PrefabInstance: {fileID: 1400686119}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &577911919
 GameObject:
@@ -11501,12 +11910,10 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 213494107}
   message: Ouch my back!
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 1986593222}
+  forceLookAt: 0
   showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!1001 &603832439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24107,6 +24514,9 @@ GameObject:
   - component: {fileID: 671938682}
   - component: {fileID: 671938681}
   - component: {fileID: 671938680}
+  - component: {fileID: 671938685}
+  - component: {fileID: 671938684}
+  - component: {fileID: 671938683}
   m_Layer: 3
   m_Name: DisegnoBimba3
   m_TagString: Untagged
@@ -24163,16 +24573,10 @@ MonoBehaviour:
   canvasText: {fileID: 550524720}
   message: I remember the thousand days spent together, I really enjoyed playing
     with that little girl.
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 724645193}
+  forceLookAt: 1
   showTextMultipleTimes: 0
   storyAdvanced: 0
-  objectsToActivate:
-  - {fileID: 601622786}
-  - {fileID: 1668849959830921570}
-  - {fileID: 1830088400}
-  objectsToDeactivate:
-  - {fileID: 671938678}
 --- !u!65 &671938682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24186,6 +24590,53 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3724215, y: 0.38910264, z: 0.26815224}
   m_Center: {x: -0.00041735172, y: 0.17061421, z: -0.023338318}
+--- !u!114 &671938683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671938678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 671938678}
+--- !u!114 &671938684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671938678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 601622786}
+  - {fileID: 1668849959830921570}
+  - {fileID: 1830088400}
+--- !u!114 &671938685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671938678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 03d7bb2b9ea1d0946954b07c1b6775d0, type: 3}
+  volume: 1
 --- !u!1 &673055071
 GameObject:
   m_ObjectHideFlags: 0
@@ -24594,7 +25045,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &704411689
 Transform:
@@ -24945,9 +25396,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 724717845}
+  - component: {fileID: 724717846}
   - component: {fileID: 724717848}
   - component: {fileID: 724717847}
-  - component: {fileID: 724717846}
   m_Layer: 3
   m_Name: FedeStanzaVecchio2
   m_TagString: Untagged
@@ -25014,12 +25465,10 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 680284587}
   message: She was my most precious thing...
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 2110108205}
+  forceLookAt: 0
   showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!1 &733460365
 GameObject:
   m_ObjectHideFlags: 0
@@ -25264,6 +25713,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 413417889}
+  - {fileID: 541601831}
+  - {fileID: 1078209374}
+  - {fileID: 391572063}
   m_Father: {fileID: 5714601808371142114}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25767,8 +26219,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "My parents...\n I remember that day, they bought me a beautiful beautiful
-    toy car. who knows where it is now."
+  m_text: 'My parents.
+
+    That day they bought me a toy car.
+
+    I always kept
+    it on my bookshelf.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
   m_sharedMaterial: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
@@ -25946,7 +26402,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &784603195
 Transform:
@@ -26154,8 +26610,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "my parents... \nI remember that day, they bought me a beautiful beautiful
-    toy car. who knows where it is now."
+  m_text: 'My parents.
+
+    That day they bought me a toy car.
+
+    I always kept
+    it on my bookshelf.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dbf72b0dd8365641a1702a5242bb35f, type: 2}
   m_sharedMaterial: {fileID: -1243312745835257926, guid: 0dbf72b0dd8365641a1702a5242bb35f,
@@ -26291,7 +26751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Let's see what this key is for...
+  m_text: What this key is for?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
   m_sharedMaterial: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
@@ -26619,7 +27079,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47240
+  m_Name: pb_Mesh31444
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27105,12 +27565,10 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 1413285651}
   message: I can't reach it.
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 1846532403}
+  forceLookAt: 0
   showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!65 &857123200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27156,6 +27614,8 @@ GameObject:
   - component: {fileID: 859505477}
   - component: {fileID: 859505476}
   - component: {fileID: 859505475}
+  - component: {fileID: 859505479}
+  - component: {fileID: 859505478}
   m_Layer: 3
   m_Name: DisegnoBimba1
   m_TagString: Untagged
@@ -27211,16 +27671,10 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 933391415}
   message: I can't reach it
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 1963171082}
+  forceLookAt: 1
   showTextMultipleTimes: 0
   storyAdvanced: 0
-  objectsToActivate:
-  - {fileID: 857123197}
-  - {fileID: 1036466387}
-  objectsToDeactivate:
-  - {fileID: 335965233}
-  - {fileID: 859505473}
 --- !u!65 &859505477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27234,6 +27688,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8792026, y: 0.38910264, z: 0.75304437}
   m_Center: {x: -0.071093075, y: 0.17061421, z: -0.2657845}
+--- !u!114 &859505478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859505473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 335965233}
+  - {fileID: 859505473}
+--- !u!114 &859505479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859505473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 857123197}
+  - {fileID: 1036466387}
 --- !u!1 &867084952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 24d9211a6e058ea4688dc8ed777321f6,
@@ -27488,7 +27974,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &882213672
 Transform:
@@ -27779,7 +28265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 71}
+  m_AnchoredPosition: {x: 0, y: 71}
   m_SizeDelta: {x: 0.00009540282, y: -0.0000021457672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &928999600
@@ -29634,6 +30120,104 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1553085457602642683, guid: 24d9211a6e058ea4688dc8ed777321f6, type: 3}
+--- !u!1 &1078209373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1078209374}
+  - component: {fileID: 1078209377}
+  - component: {fileID: 1078209376}
+  - component: {fileID: 1078209375}
+  m_Layer: 3
+  m_Name: ray blocker cassetto (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1078209374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078209373}
+  m_LocalRotation: {x: -0, y: -0.70710665, z: 0, w: -0.707107}
+  m_LocalPosition: {x: -0.413, y: -0.007459279, z: -0.454}
+  m_LocalScale: {x: -0.87293005, y: 0.27128184, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 750425968}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!64 &1078209375
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078209373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1078209376
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078209373}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1078209377
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078209373}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1098037826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30121,7 +30705,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1140547069
 Transform:
@@ -30149,7 +30733,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -30161,7 +30745,6 @@ MeshRenderer:
   - {fileID: 2100000, guid: 6bd94a408001c794882c944927261804, type: 2}
   - {fileID: 2100000, guid: 4e2b8dddb8794534d8465322a4ab8709, type: 2}
   - {fileID: 2100000, guid: 2192ca81ed5a80943981d3596be8dd84, type: 2}
-  - {fileID: 2100000, guid: e62fe9654c3383744ac129d538f5d2e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30342,7 +30925,7 @@ PrefabInstance:
         type: 3}
       propertyPath: message
       value: "I used to play with this toy car a lot! It was my favorite. \nI remember
-        my father kept it in the desk"
+        my father wanted me to keep it in the desk."
       objectReference: {fileID: 0}
     - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
         type: 3}
@@ -30353,6 +30936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: minTimeout
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: forceLookAt
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
         type: 3}
@@ -30367,12 +30955,12 @@ PrefabInstance:
     - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
         type: 3}
       propertyPath: objectsToActivate.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
         type: 3}
       propertyPath: objectsToDeactivate.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
         type: 3}
@@ -30611,6 +31199,7 @@ GameObject:
   - component: {fileID: 1172389487}
   - component: {fileID: 1172389492}
   - component: {fileID: 1172389493}
+  - component: {fileID: 1172389494}
   m_Layer: 3
   m_Name: Secretaire_door_anziano
   m_TagString: Untagged
@@ -30651,7 +31240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasIconManager: {fileID: 63106756}
-  audioClip: {fileID: 8300000, guid: 06742352b27aafa4080f19227dad8db0, type: 3}
 --- !u!23 &1172389489
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30744,6 +31332,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mirroredObject: {fileID: 1888367597}
+--- !u!114 &1172389494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172389486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 06742352b27aafa4080f19227dad8db0, type: 3}
+  volume: 1
 --- !u!1 &1174720178
 GameObject:
   m_ObjectHideFlags: 0
@@ -31015,6 +31618,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 13c79d7dc323bc04ab4d74916dadb7ad, type: 2}
+    - target: {fileID: -6498126458684034650, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -5814271288802833681, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -31110,10 +31718,35 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4951627388666015309, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -3295872908756965793, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3295872908756965793, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -2259033187684056247, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1690939468648143626, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1399053911242178998, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: -1217575591272494204, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
@@ -31129,6 +31762,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.046
+      objectReference: {fileID: 0}
+    - target: {fileID: -531910123194431399, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 78848411846634974, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
@@ -31165,11 +31808,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e2f06672301ba04d903936bef1d83bd, type: 2}
+    - target: {fileID: 2089299783670782539, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041140215440764850, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041140215440764850, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087772768836897876, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3237470065723034034, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e2f06672301ba04d903936bef1d83bd, type: 2}
+    - target: {fileID: 3712686917413526535, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3803288749803295239, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31180,16 +31848,31 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.49412462
       objectReference: {fileID: 0}
+    - target: {fileID: 4572217606534919187, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4593670764388574043, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e2f06672301ba04d903936bef1d83bd, type: 2}
+    - target: {fileID: 5422171230709953889, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5781805394781955439, guid: 24d9211a6e058ea4688dc8ed777321f6,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 6e2f06672301ba04d903936bef1d83bd, type: 2}
+    - target: {fileID: 7919394605885822056, guid: 24d9211a6e058ea4688dc8ed777321f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24d9211a6e058ea4688dc8ed777321f6, type: 3}
 --- !u!1 &1186698066
@@ -31204,6 +31887,8 @@ GameObject:
   - component: {fileID: 1186698070}
   - component: {fileID: 1186698069}
   - component: {fileID: 1186698068}
+  - component: {fileID: 1186698072}
+  - component: {fileID: 1186698071}
   m_Layer: 3
   m_Name: ScrignoBimbo2
   m_TagString: Untagged
@@ -31270,15 +31955,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 735231741}
-  message: Let's see what this key is for...
-  audioClip: {fileID: 0}
+  message: What this key is for?
   canvasIconManager: {fileID: 221931008}
+  forceLookAt: 1
   showTextMultipleTimes: 0
   storyAdvanced: 0
-  objectsToActivate:
-  - {fileID: 423348145}
+--- !u!114 &1186698071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186698066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
   objectsToDeactivate:
   - {fileID: 1186698066}
+--- !u!114 &1186698072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186698066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 423348145}
 --- !u!1 &1188803370
 GameObject:
   m_ObjectHideFlags: 0
@@ -31518,7 +32229,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "My marvelous car, I loved to travel on that wonder.\nBut there is something
-    I loved even more in this picture\u2026"
+    I love even more in this picture\u2026"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dbf72b0dd8365641a1702a5242bb35f, type: 2}
   m_sharedMaterial: {fileID: -1243312745835257926, guid: 0dbf72b0dd8365641a1702a5242bb35f,
@@ -31840,7 +32551,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1208945218
 Transform:
@@ -32064,6 +32775,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.0018880293
       objectReference: {fileID: 0}
+    - target: {fileID: 7948099160016201247, guid: d16a09f0c93dec44ca4a2c599266b237,
+        type: 3}
+      propertyPath: forceLookAt
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8219911419275071015, guid: d16a09f0c93dec44ca4a2c599266b237,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -32077,6 +32793,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1400686119}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1261336201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575671505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 857123197}
+--- !u!114 &1261336202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575671505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 671938678}
+--- !u!114 &1261336203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575671505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: e05834ff90a67b74092f7eb20820f0df, type: 3}
+  volume: 1
 --- !u!1 &1268634052
 GameObject:
   m_ObjectHideFlags: 0
@@ -32471,13 +33232,11 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 1363850523}
   message: "My marvelous car, I loved to travel on that wonder.\nBut there is something
-    I loved even more in this picture\u2026"
-  audioClip: {fileID: 0}
+    I love even more in this picture\u2026"
   canvasIconManager: {fileID: 1892094026}
+  forceLookAt: 0
   showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!65 &1311448782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33566,7 +34325,7 @@ PrefabInstance:
     - target: {fileID: 9188689858550611898, guid: 42a5f30461524074bbd4628ce8e21095,
         type: 3}
       propertyPath: m_Name
-      value: Drop Position (3)
+      value: Drop Position Poggiapiedi
       objectReference: {fileID: 0}
     - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
         type: 3}
@@ -33578,31 +34337,6 @@ PrefabInstance:
       propertyPath: droppableObject
       value: 
       objectReference: {fileID: 1036466389}
-    - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
-        type: 3}
-      propertyPath: objectsToActivate.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
-        type: 3}
-      propertyPath: objectsToDeactivate.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
-        type: 3}
-      propertyPath: objectsToActivate.Array.data[0]
-      value: 
-      objectReference: {fileID: 671938678}
-    - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
-        type: 3}
-      propertyPath: objectsToDeactivate.Array.data[0]
-      value: 
-      objectReference: {fileID: 857123197}
-    - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
-        type: 3}
-      propertyPath: objectsToDeactivate.Array.data[1]
-      value: 
-      objectReference: {fileID: 1036466387}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42a5f30461524074bbd4628ce8e21095, type: 3}
 --- !u!1 &1413285650
@@ -34184,14 +34918,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 517091448}
-  message: "My parents...\n I remember that day, they bought me a beautiful beautiful
-    toy car. who knows where it is now."
-  audioClip: {fileID: 0}
+  message: 'My parents.
+
+    That day they bought me a toy car.
+
+    I always kept
+    it on my bookshelf.'
   canvasIconManager: {fileID: 633656301}
+  forceLookAt: 0
   showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!65 &1456687077
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34968,7 +35704,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1507359763
 Transform:
@@ -38779,12 +39515,10 @@ MonoBehaviour:
   canvasText: {fileID: 2070600524}
   message: I remember the thousand days spent together, I really enjoyed playing
     with that little girl.
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 104061022}
-  showTextMultipleTimes: 0
+  forceLookAt: 0
+  showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!65 &1830088404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39195,12 +39929,10 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 1572466268}
   message: Who are the people in this picture? I don't recognize them...
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 1367339517}
+  forceLookAt: 0
   showTextMultipleTimes: 1
   storyAdvanced: 0
-  objectsToActivate: []
-  objectsToDeactivate: []
 --- !u!65 &1870513685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41705,16 +42437,6 @@ PrefabInstance:
       objectReference: {fileID: 1652060529}
     - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
         type: 3}
-      propertyPath: objectsToActivate.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
-        type: 3}
-      propertyPath: objectsToDeactivate.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9188689858550611899, guid: 42a5f30461524074bbd4628ce8e21095,
-        type: 3}
       propertyPath: objectsToActivate.Array.data[0]
       value: 
       objectReference: {fileID: 2040308188}
@@ -41960,6 +42682,9 @@ GameObject:
   - component: {fileID: 2040308192}
   - component: {fileID: 2040308191}
   - component: {fileID: 2040308190}
+  - component: {fileID: 2040308195}
+  - component: {fileID: 2040308194}
+  - component: {fileID: 2040308193}
   m_Layer: 3
   m_Name: FotoRagazza1
   m_TagString: Untagged
@@ -42013,17 +42738,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 1013253020}
-  message: "My marvelous car, I loved to travel on that wonder. But there was something
+  message: "My marvelous car, I loved to travel on that wonder.\nBut there is something
     I loved even more in this picture\u2026"
-  audioClip: {fileID: 0}
   canvasIconManager: {fileID: 83244801}
+  forceLookAt: 1
   showTextMultipleTimes: 0
   storyAdvanced: 0
-  objectsToActivate:
-  - {fileID: 1311448779}
-  - {fileID: 859505473}
-  objectsToDeactivate:
-  - {fileID: 2040308188}
 --- !u!65 &2040308192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42037,6 +42757,52 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3724215, y: 0.38910264, z: 0.26815224}
   m_Center: {x: -0.00041735172, y: 0.17061421, z: -0.023338318}
+--- !u!114 &2040308193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040308188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 2040308188}
+--- !u!114 &2040308194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040308188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 1311448779}
+  - {fileID: 859505473}
+--- !u!114 &2040308195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040308188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 03d7bb2b9ea1d0946954b07c1b6775d0, type: 3}
+  volume: 1
 --- !u!1 &2043569186
 GameObject:
   m_ObjectHideFlags: 0
@@ -54839,7 +55605,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Here it is, my time capsule! \nI hid my most precious memories In here."
+  m_text: 'Here it is, my time capsule!
+
+    I hid my most precious memories In here.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
   m_sharedMaterial: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
@@ -54959,6 +55727,8 @@ GameObject:
   - component: {fileID: 1668849959830921581}
   - component: {fileID: 1668849959830921580}
   - component: {fileID: 1668849959830921583}
+  - component: {fileID: 1668849959830921585}
+  - component: {fileID: 1668849959830921584}
   m_Layer: 3
   m_Name: ScrignoBimbo
   m_TagString: Untagged
@@ -54993,15 +55763,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 1668849959086100378}
-  message: "Here it is, my time capsule! \nI hid my most precious memories In here."
-  audioClip: {fileID: 0}
+  message: 'Here it is, my time capsule!
+
+    I hid my most precious memories In
+    here.'
   canvasIconManager: {fileID: 360051539}
+  forceLookAt: 1
   showTextMultipleTimes: 0
   storyAdvanced: 0
-  objectsToActivate:
-  - {fileID: 1186698066}
-  objectsToDeactivate:
-  - {fileID: 1668849959830921570}
 --- !u!4 &1668849959830921582
 Transform:
   m_ObjectHideFlags: 0
@@ -55034,6 +55803,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.43354258, y: 0.22506365, z: 0.26468104}
   m_Center: {x: 0.03160292, y: 0.08425178, z: -0.020099014}
+--- !u!114 &1668849959830921584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668849959830921570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 1668849959830921570}
+--- !u!114 &1668849959830921585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668849959830921570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 1186698066}
 --- !u!23 &1805948658333899198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55280,6 +56079,8 @@ GameObject:
   - component: {fileID: 5714601808371142115}
   - component: {fileID: 5714601808371142124}
   - component: {fileID: 5714601808371142125}
+  - component: {fileID: 5714601808371142127}
+  - component: {fileID: 5714601808371142126}
   m_Layer: 3
   m_Name: CassettoApribile
   m_TagString: Untagged
@@ -55301,12 +56102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectNeeded: {fileID: 684843757}
   canvasIconManager: {fileID: 1180749857}
-  audioClip: {fileID: 8300000, guid: 06742352b27aafa4080f19227dad8db0, type: 3}
-  objectsToActivate:
-  - {fileID: 182533176}
-  - {fileID: 413417888}
-  objectsToDeactivate: []
-  activationDelay: 0.5
 --- !u!95 &5714601808371142125
 Animator:
   serializedVersion: 4
@@ -55327,6 +56122,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5714601808371142126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714601808371142119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.5
+  objectsToActivate:
+  - {fileID: 182533176}
+  - {fileID: 413417888}
+--- !u!114 &5714601808371142127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714601808371142119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 06742352b27aafa4080f19227dad8db0, type: 3}
+  volume: 1
 --- !u!1001 &5714601808765352813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55587,6 +56413,10 @@ GameObject:
   - component: {fileID: 7948099159663181519}
   - component: {fileID: 7948099159663181517}
   - component: {fileID: 7948099159663181516}
+  - component: {fileID: 7948099159663181522}
+  - component: {fileID: 7948099159663181521}
+  - component: {fileID: 7948099159663181520}
+  - component: {fileID: 7948099159663181523}
   m_Layer: 3
   m_Name: FotoGenitoriVecchioSpawn
   m_TagString: Untagged
@@ -55622,20 +56452,10 @@ MonoBehaviour:
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 7948099160122118202}
   message: "Who are the people in this picture? \nI don't recognize them..."
-  audioClip: {fileID: 8300000, guid: 03d7bb2b9ea1d0946954b07c1b6775d0, type: 3}
   canvasIconManager: {fileID: 1207521479}
+  forceLookAt: 1
   showTextMultipleTimes: 0
   storyAdvanced: 0
-  objectsToActivate:
-  - {fileID: 517461156}
-  - {fileID: 1870513682}
-  - {fileID: 497712868}
-  - {fileID: 299356022}
-  - {fileID: 1833032730}
-  - {fileID: 1356999222}
-  objectsToDeactivate:
-  - {fileID: 1805577736}
-  - {fileID: 7948099159663181506}
 --- !u!4 &7948099159663181518
 Transform:
   m_ObjectHideFlags: 0
@@ -55668,6 +56488,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3724215, y: 0.38910264, z: 0.26815224}
   m_Center: {x: -0.00041735172, y: 0.17061421, z: -0.023338318}
+--- !u!114 &7948099159663181520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948099159663181506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888dd720dc4a029224f638e4d3279d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToDeactivate:
+  - {fileID: 1805577736}
+  - {fileID: 7948099159663181506}
+--- !u!114 &7948099159663181521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948099159663181506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectsToActivate:
+  - {fileID: 517461156}
+  - {fileID: 1870513682}
+  - {fileID: 497712868}
+  - {fileID: 299356022}
+  - {fileID: 1833032730}
+  - {fileID: 1356999222}
+--- !u!114 &7948099159663181522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948099159663181506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 03d7bb2b9ea1d0946954b07c1b6775d0, type: 3}
+  volume: 1
+--- !u!114 &7948099159663181523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948099159663181506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e34cfaa25e4bcb96f1fb1884801968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  objectToLookAt: {fileID: 119602423}
+  lookForSeconds: 0.4
 --- !u!1 &7948099159705413128
 GameObject:
   m_ObjectHideFlags: 0
@@ -56019,6 +56905,8 @@ GameObject:
   - component: {fileID: 8929111995435944976}
   - component: {fileID: 8929111995435944991}
   - component: {fileID: 8929111995435944992}
+  - component: {fileID: 8929111995435944994}
+  - component: {fileID: 8929111995435944993}
   m_Layer: 3
   m_Name: AnimazioneFinale
   m_TagString: Untagged
@@ -56040,11 +56928,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectNeeded: {fileID: 2087556511}
   canvasIconManager: {fileID: 1043136932}
-  audioClip: {fileID: 8300000, guid: 80bec3c4fb7a6fa4599f27884a46848a, type: 3}
-  objectsToActivate:
-  - {fileID: 930888593}
-  objectsToDeactivate: []
-  activationDelay: 0.5
 --- !u!95 &8929111995435944992
 Animator:
   serializedVersion: 4
@@ -56065,6 +56948,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8929111995435944993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929111995435944980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4354c339a5ed471581b9b1cd763424a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.5
+  objectsToActivate:
+  - {fileID: 930888593}
+--- !u!114 &8929111995435944994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929111995435944980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c782a8808d844419f8a2ff4764a27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  clip: {fileID: 8300000, guid: 80bec3c4fb7a6fa4599f27884a46848a, type: 3}
+  volume: 1
 --- !u!1001 &8929111995830287006
 PrefabInstance:
   m_ObjectHideFlags: 0

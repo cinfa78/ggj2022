@@ -1,3 +1,4 @@
+using System.Collections;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -49,10 +50,6 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentFPC = oldFPC;
 	}
 
-	public void ForceLookAt() {
-		currentFPC.enabled = false;
-	}
-
 	private void Switch() {
 		oldActive = !oldActive;
 
@@ -79,6 +76,16 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentFPC = oldActive ? oldFPC : youngFPC;
 	}
 
+	public void ForceLookAt(GameObject targetGameObject) {
+		Debug.Log($"Look At");
+		ForceLookAt(targetGameObject.transform.position);
+	}
+
+	public void ForceLookAt(Vector3 targetWorldPosition) {
+		currentFPC.externalRotationLookAt = true;
+		currentFPC.externalRotationLookAtPosition = targetWorldPosition;
+	}
+
 	[Button("Test Look At")]
 	private void LookAtOrigin(Vector3 target) {
 		currentFPC.externalRotationLookAt = true;
@@ -86,8 +93,17 @@ public class CharacterSwitcher : MonoBehaviour {
 	}
 
 	[Button("Release Look At")]
-	private void UnlockFPC() {
+	public void ReleaseLookAt(float delay = 0) {
+		StartCoroutine(DelayedRelease(delay));
+	}
+
+	private IEnumerator DelayedRelease(float delay) {
+		if (delay > 0) {
+			yield return new WaitForSeconds(delay);
+		}
+		Debug.Log($"Look At Released");
 		currentFPC.externalRotation = false;
 		currentFPC.externalRotationLookAt = false;
+		yield break;
 	}
 }
