@@ -1433,7 +1433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111590424}
   m_LocalRotation: {x: -0, y: 0.35364303, z: -0, w: 0.9353805}
-  m_LocalPosition: {x: 3.103, y: 1.316, z: 0.435}
+  m_LocalPosition: {x: 3.103, y: 1.323, z: 0.435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3365,7 +3365,6 @@ GameObject:
   - component: {fileID: 237242349}
   - component: {fileID: 237242348}
   - component: {fileID: 237242347}
-  - component: {fileID: 237242350}
   m_Layer: 3
   m_Name: FotoGenitoriColoreUno
   m_TagString: Untagged
@@ -3489,21 +3488,6 @@ MonoBehaviour:
   delay: 0
   clip: {fileID: 8300000, guid: 03d7bb2b9ea1d0946954b07c1b6775d0, type: 3}
   volume: 1
---- !u!114 &237242350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237242342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e34cfaa25e4bcb96f1fb1884801968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0
-  objectToLookAt: {fileID: 188439964}
-  lookForSeconds: 0.4
 --- !u!4 &240508365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053380814409787720, guid: be9f93828948f924a93d6caa1f54a1c8,
@@ -12460,6 +12444,14 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_WalkSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: cameraMaxFov
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: cameraMinFov
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_UseFovKick
@@ -34741,6 +34733,14 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: cameraMaxFov
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: cameraMinFov
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_UseFovKick
       value: 0
       objectReference: {fileID: 0}
@@ -39113,6 +39113,7 @@ MonoBehaviour:
   youngMT: {fileID: 0}
   oldActive: 1
   heldObject: {fileID: 0}
+  zoomFieldOfView: 30
 --- !u!114 &1785490874
 MonoBehaviour:
   m_ObjectHideFlags: 0

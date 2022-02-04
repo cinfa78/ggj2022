@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 
@@ -18,6 +16,9 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 		[SerializeField] private float m_JumpSpeed;
 		[SerializeField] private float m_StickToGroundForce;
 		[SerializeField] private float m_GravityMultiplier;
+		private float defaultFov;
+		private float targetFov;
+
 		[SerializeField] private MouseLook m_MouseLook;
 		[SerializeField] private bool m_UseFovKick;
 		[SerializeField] private FOVKick m_FovKick = new FOVKick();
@@ -55,7 +56,6 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 
 		private void Start() {
 			m_CharacterController = GetComponent<CharacterController>();
-			//m_Camera = Camera.main;
 			m_OriginalCameraPosition = m_Camera.transform.localPosition;
 			m_FovKick.Setup(m_Camera);
 			m_HeadBob.Setup(m_Camera, m_StepInterval);
@@ -64,6 +64,8 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 			m_Jumping = false;
 			m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform, m_Camera.transform);
+			defaultFov = m_Camera.fieldOfView;
+			targetFov = m_Camera.fieldOfView;
 		}
 
 		private void OnDisable() {
@@ -93,6 +95,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 			}
 
 			m_PreviouslyGrounded = m_CharacterController.isGrounded;
+			m_Camera.fieldOfView = Mathf.Lerp(m_Camera.fieldOfView, targetFov, 0.1f);
 		}
 
 		private void PlayLandingSound() {
@@ -256,6 +259,14 @@ namespace UnityStandardAssets.Characters.FirstPerson {
 			else {
 				m_MouseLook.LookRotation(transform, m_Camera.transform);
 			}
+		}
+
+		public void ZoomIn(float newTargetFov) {
+			targetFov = newTargetFov;
+		}
+
+		public void ZoomReset() {
+			targetFov = defaultFov;
 		}
 
 		private void OnControllerColliderHit(ControllerColliderHit hit) {
