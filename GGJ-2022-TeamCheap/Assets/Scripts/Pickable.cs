@@ -26,6 +26,7 @@ namespace TheDay {
 
 		public override void Interact() {
 			if (characterSwitcher.IsHoldingObject == false) {
+				characterSwitcher.heldObject = gameObject;
 				if (audioClip != null) {
 					AudioSource.PlayClipAtPoint(audioClip, transform.position);
 				}
@@ -42,7 +43,6 @@ namespace TheDay {
 				}
 				transform.localPosition = Vector3.zero;
 				mirroredObject.transform.localPosition = Vector3.zero;
-				characterSwitcher.heldObject = gameObject;
 				collider.enabled = false;
 			}
 		}

@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using DefaultNamespace;
 using Sirenix.OdinInspector;
 using TheDay;
 using TMPro;
 using UnityEngine;
+using Action = TheDay.Action;
 
 public class ShowTextOnInteract : Interactable {
 	public TextTimingSetup textTimingSetup;
@@ -42,6 +44,13 @@ public class ShowTextOnInteract : Interactable {
 	private void Start() {
 		label.text = message;
 	}
+#if UNITY_EDITOR
+	private void Update() {
+		if (Input.GetButtonDown("Fire2")) {
+			SecondaryInteract();
+		}
+	}
+	#endif
 
 	private void UpdateLabel() {
 		label = canvasText.GetComponentInChildren<TMP_Text>();
@@ -50,6 +59,7 @@ public class ShowTextOnInteract : Interactable {
 	}
 
 	public override void Interact() {
+		skip = false;
 		if (showTextMultipleTimes) {
 			if (textCoroutine != null) StopCoroutine(textCoroutine);
 			textCoroutine = StartCoroutine(FadeOutText(false));

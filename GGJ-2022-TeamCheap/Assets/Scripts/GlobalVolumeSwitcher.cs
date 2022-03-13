@@ -15,7 +15,7 @@ public class GlobalVolumeSwitcher : MonoBehaviour {
 	}
 
 	private void Switch() {
-		Debug.Log($"Switcho volumi");
+		//Debug.Log($"Switcho volumi");
 		young.weight = 1 - young.weight;
 		old.weight = 1 - old.weight;
 	}

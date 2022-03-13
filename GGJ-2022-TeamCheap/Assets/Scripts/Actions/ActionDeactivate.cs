@@ -16,7 +16,9 @@ namespace TheDay {
 		private IEnumerator DelayedExecution() {
 			if (delay > 0)
 				yield return new WaitForSeconds(delay);
-			foreach (var obj in objectsToDeactivate) {
+			delayedDeactivation = false;
+			foreach (GameObject obj in objectsToDeactivate) {
+				//Debug.Log($"===== {obj.name} {caller.name} =====");
 				if (obj != caller) {
 					obj.SetActive(false);
 				}
@@ -27,9 +29,9 @@ namespace TheDay {
 			var interactable = caller.GetComponent<Interactable>();
 			if (interactable != null) {
 				if (delayedDeactivation) interactable.StartCoroutine(Deactivate());
-				else {
+				/*else {
 					Destroy(caller, 0.1f);
-				}
+				}*/
 			}
 			yield break;
 		}

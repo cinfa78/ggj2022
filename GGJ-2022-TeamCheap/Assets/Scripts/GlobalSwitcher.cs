@@ -12,7 +12,7 @@ public class GlobalSwitcher : MonoBehaviour {
 
 	private void Update() {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Debug.Log($"Escape Pressed");
+			//Debug.Log($"Escape Pressed");
 #if !UNITY_EDITOR
 Application.Quit();
 #endif

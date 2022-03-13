@@ -91,7 +91,7 @@ namespace TheDay {
 		}
 
 		public void ForceLookAt(GameObject targetGameObject) {
-			Debug.Log($"Look At");
+			//Debug.Log($"Look At");
 			ForceLookAt(targetGameObject.transform.position);
 		}
 
@@ -115,7 +115,7 @@ namespace TheDay {
 			if (delay > 0) {
 				yield return new WaitForSeconds(delay);
 			}
-			Debug.Log($"Look At Released");
+			//Debug.Log($"Look At Released");
 			currentFPC.externalRotation = false;
 			currentFPC.externalRotationLookAt = false;
 			yield break;

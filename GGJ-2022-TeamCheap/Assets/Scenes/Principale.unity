@@ -2078,7 +2078,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &166368860
 GameObject:
@@ -2389,8 +2389,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'My parents...
 
-    I remember that day, they bought me a beautiful beautiful
-    toy car.
+    I remember that day, they bought me a shiny new toy
+    car.
 
     I used to play with it on the bookshelf.'
   m_isRightToLeft: 0
@@ -3401,8 +3401,8 @@ MonoBehaviour:
   canvasText: {fileID: 629959965}
   message: 'My parents...
 
-    I remember that day, they bought me a beautiful beautiful
-    toy car.
+    I remember that day, they bought me a shiny new toy
+    car.
 
     I used to play with it on the bookshelf.'
   canvasIconManager: {fileID: 1951648838}
@@ -4486,7 +4486,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8873383570572990894, guid: 24d9211a6e058ea4688dc8ed777321f6, type: 3}
 --- !u!1 &355493806
@@ -11893,7 +11893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 213494107}
-  message: Ouch my back!
+  message: Ouch, my back!
   canvasIconManager: {fileID: 1986593222}
   forceLookAt: 0
   showTextMultipleTimes: 1
@@ -12491,7 +12491,7 @@ PrefabInstance:
     - target: {fileID: 3912772899959245773, guid: 811d6d79806c9cd428d1273fb52d1826,
         type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 3912772899959245773, guid: 811d6d79806c9cd428d1273fb52d1826,
         type: 3}
@@ -24563,8 +24563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 550524720}
-  message: I remember the thousand days spent together, I really enjoyed playing
-    with that little girl.
+  message: I remember the long days spent together, I really enjoyed playing with
+    that little girl.
   canvasIconManager: {fileID: 724645193}
   forceLookAt: 1
   showTextMultipleTimes: 0
@@ -24969,7 +24969,7 @@ PrefabInstance:
     - target: {fileID: 3912772899959245773, guid: 811d6d79806c9cd428d1273fb52d1826,
         type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3912772899959245773, guid: 811d6d79806c9cd428d1273fb52d1826,
         type: 3}
@@ -26213,10 +26213,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'My parents.
 
-    That day they bought me a toy car.
+    I remember that day, they bought me a toy car.
 
-    I always kept
-    it on my bookshelf.'
+    I
+    used to play with it on the bookshelf.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
   m_sharedMaterial: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
@@ -26743,7 +26743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What this key is for?
+  m_text: What is this key for?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
   m_sharedMaterial: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
@@ -27556,7 +27556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 1413285651}
-  message: I can't reach it.
+  message: I can't reach it
   canvasIconManager: {fileID: 1846532403}
   forceLookAt: 0
   showTextMultipleTimes: 1
@@ -28220,7 +28220,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &928999598
 GameObject:
@@ -28659,7 +28659,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933391410
 GameObject:
@@ -31947,7 +31947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 735231741}
-  message: What this key is for?
+  message: What is this key for?
   canvasIconManager: {fileID: 221931008}
   forceLookAt: 1
   showTextMultipleTimes: 0
@@ -32911,7 +32911,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296120526
 GameObject:
@@ -34031,7 +34031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I can't reach it.
+  m_text: I can't reach it
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
   m_sharedMaterial: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
@@ -38194,7 +38194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I remember the thousand days spent together, I really enjoyed playing with
+  m_text: I remember the long days spent together, I really enjoyed playing with
     that little girl.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
@@ -38331,7 +38331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ouch my back!
+  m_text: Ouch, my back!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dbf72b0dd8365641a1702a5242bb35f, type: 2}
   m_sharedMaterial: {fileID: -1243312745835257926, guid: 0dbf72b0dd8365641a1702a5242bb35f,
@@ -39514,8 +39514,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimingSetup: {fileID: 11400000, guid: bacc9791a921cb74e9f88f1132423992, type: 2}
   canvasText: {fileID: 2070600524}
-  message: I remember the thousand days spent together, I really enjoyed playing
-    with that little girl.
+  message: I remember the long days spent together, I really enjoyed playing with
+    that little girl.
   canvasIconManager: {fileID: 104061022}
   forceLookAt: 0
   showTextMultipleTimes: 1
@@ -40882,7 +40882,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I remember the thousand days spent together, I really enjoyed playing with
+  m_text: I remember the long days spent together, I really enjoyed playing with
     that little girl.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
@@ -42061,7 +42061,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &2007074724
 GameObject:
@@ -42217,7 +42217,7 @@ PrefabInstance:
     - target: {fileID: 3912772899959245773, guid: 811d6d79806c9cd428d1273fb52d1826,
         type: 3}
       propertyPath: m_RootOrder
-      value: 37
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3912772899959245773, guid: 811d6d79806c9cd428d1273fb52d1826,
         type: 3}
@@ -55608,7 +55608,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Here it is, my time capsule!
 
-    I hid my most precious memories In here.'
+    I hid my most precious memories in here.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701e13138389e184fab4d903d446d1f3, type: 2}
   m_sharedMaterial: {fileID: -1892107050215221289, guid: 701e13138389e184fab4d903d446d1f3,
@@ -55766,7 +55766,7 @@ MonoBehaviour:
   canvasText: {fileID: 1668849959086100378}
   message: 'Here it is, my time capsule!
 
-    I hid my most precious memories In
+    I hid my most precious memories in
     here.'
   canvasIconManager: {fileID: 360051539}
   forceLookAt: 1
@@ -55984,7 +55984,7 @@ PrefabInstance:
     - target: {fileID: 3912772899959245773, guid: 811d6d79806c9cd428d1273fb52d1826,
         type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 3912772899959245773, guid: 811d6d79806c9cd428d1273fb52d1826,
         type: 3}

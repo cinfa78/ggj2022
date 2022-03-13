@@ -1,8 +1,13 @@
+using System;
 using System.Collections;
 using Sirenix.OdinInspector;
 using TheDay;
+#if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.PackageManager;
+#endif
 using UnityEngine;
+using Action = TheDay.Action;
 
 public class DropPositionMarker : Interactable {
 	public float radius = 0.5f;
@@ -32,9 +37,12 @@ public class DropPositionMarker : Interactable {
 	public override void Interact() {
 		if (characterSwitcher.IsHoldingObject && characterSwitcher.heldObject.name == droppableObject.name) {
 			Debug.Log($"Dropping {characterSwitcher.heldObject.name}");
+			var dropTransform = transform;
+
 			droppableObject.transform.parent = null;
-			droppableObject.transform.position = transform.position;
-			droppableObject.transform.rotation = transform.rotation;
+
+			droppableObject.transform.position = dropTransform.position;
+			droppableObject.transform.rotation = dropTransform.rotation;
 			characterSwitcher.heldObject = null;
 
 			MirrorTransform mirroredMirrorTransform = droppableObject.GetComponent<MirrorTransform>().mirroredObject.GetComponent<MirrorTransform>();
@@ -61,7 +69,7 @@ public class DropPositionMarker : Interactable {
 			}
 		}
 	}
-
+#if UNITY_EDITOR
 	private void OnDrawGizmos() {
 		Vector3 origin = transform.position;
 		Gizmos.color = Color.yellow;
@@ -71,9 +79,8 @@ public class DropPositionMarker : Interactable {
 		Gizmos.color = Color.magenta;
 		if (droppableObject != null) {
 			Gizmos.DrawLine(origin, droppableObject.transform.position);
-#if UNITY_EDITOR
 			Handles.Label(origin, droppableObject.name);
-#endif
 		}
 	}
+#endif
 }
