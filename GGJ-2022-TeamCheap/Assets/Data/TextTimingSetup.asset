@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TextTimingSetup
   m_EditorClassIdentifier: 
   fadeInTime: 0.5
-  minDisplayedTime: 1
-  perLetterDelay: 0.025
+  minDisplayedTime: 1.25
+  perLetterDelay: 0.035
   fadeOutTime: 0.5
